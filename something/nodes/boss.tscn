@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dutd7wdecg5k2"]
+
+[ext_resource type="Script" uid="uid://bvdk5l2l20xsk" path="res://Scripts/boss.gd" id="1_kjr47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjr47"]
+bg_color = Color(0.870588, 0, 0.223529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3s3x"]
+bg_color = Color(0.247059, 0.854902, 0.239216, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kjr47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3s3x"]
+size = Vector2(173.5, 128)
+
+[node name="boss" type="CharacterBody2D" groups=["boss"]]
+script = ExtResource("1_kjr47")
+
+[node name="Health" type="ProgressBar" parent="." groups=["boss"]]
+offset_top = -28.0
+offset_right = 172.0
+offset_bottom = -1.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kjr47")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p3s3x")
+value = 5.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Health"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_bottom = 27.0
+grow_horizontal = 0
+text = "100/100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.388235, 0.184314, 1)
+position = Vector2(85.75, 63.25)
+scale = Vector2(172.5, 127.5)
+texture = SubResource("CanvasTexture_kjr47")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(85.75, 63)
+shape = SubResource("RectangleShape2D_p3s3x")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

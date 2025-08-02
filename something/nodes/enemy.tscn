@@ -1,0 +1,200 @@
+[gd_scene load_steps=19 format=3 uid="uid://1sglcl0xf1jt"]
+
+[ext_resource type="Script" uid="uid://8jvahrca4qxw" path="res://Scripts/enemy.gd" id="1_vx18p"]
+[ext_resource type="Texture2D" uid="uid://ld8h4jmif5ad" path="res://Assets/Animation/character_animation_running_enemy.png" id="2_g5f4b"]
+[ext_resource type="Texture2D" uid="uid://bsdjfibajovyw" path="res://Assets/Animation/Effects/explosion_general.png" id="3_5wlsd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ukr8"]
+size = Vector2(132, 89)
+
+[sub_resource type="Animation" id="Animation_j04cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 960, 210)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cgypo"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_g5f4b"]
+resource_name = "running_ToLeft"
+length = 0.06
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 1080, 210), Rect2(120, 0, 1080, 210), Rect2(240, 0, 1080, 210), Rect2(360, 0, 1080, 210), Rect2(480, 0, 1080, 210), Rect2(600, 0, 1080, 210)]
+}
+
+[sub_resource type="Animation" id="Animation_5wlsd"]
+resource_name = "running_ToRight"
+length = 0.06
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 1080, 210), Rect2(120, 0, 1080, 210), Rect2(240, 0, 1080, 210), Rect2(360, 0, 1080, 210), Rect2(480, 0, 1080, 210), Rect2(600, 0, 1080, 210)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgypo"]
+_data = {
+&"RESET": SubResource("Animation_j04cv"),
+&"jump": SubResource("Animation_cgypo"),
+&"running_ToLeft": SubResource("Animation_g5f4b"),
+&"running_ToRight": SubResource("Animation_5wlsd")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fj1v"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(0, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikia7"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(176, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yui6"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(352, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5t2i"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(528, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ngr"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(704, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn0ld"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(880, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgpy0"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(1056, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2t4p"]
+atlas = ExtResource("3_5wlsd")
+region = Rect2(1232, 0, 176, 175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j04cv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fj1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikia7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yui6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5t2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn0ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgpy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2t4p")
+}],
+"loop": true,
+"name": &"explosion_default",
+"speed": 20.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_vx18p")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.427451, 0.313726, 1, 1)
+position = Vector2(-3.8147e-06, 0.500012)
+texture = ExtResource("2_g5f4b")
+flip_h = true
+hframes = 9
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 210)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_5ukr8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cgypo")
+}
+speed_scale = 0.08
+movie_quit_on_finish = true
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_j04cv")
+animation = &"explosion_default"

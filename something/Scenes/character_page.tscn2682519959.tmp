@@ -1,0 +1,1185 @@
+[gd_scene load_steps=31 format=3 uid="uid://bxnto03l5mjxr"]
+
+[ext_resource type="Script" uid="uid://bsplvgh7yjodf" path="res://Scripts/character_page.gd" id="1_xkdtw"]
+[ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="2_a33jj"]
+[ext_resource type="Texture2D" uid="uid://c6esf6htp0x8o" path="res://Assets/1293 - Icon.png" id="3_7h2jp"]
+[ext_resource type="Texture2D" uid="uid://bp6in66f85tf0" path="res://Assets/1294 - Icon.png" id="4_hxf2x"]
+[ext_resource type="Texture2D" uid="uid://byf7mqfj7e7ch" path="res://Assets/1420 - Icon.png" id="5_hxf2x"]
+[ext_resource type="Texture2D" uid="uid://bmf57emc1isu0" path="res://Assets/1421 - Icon.png" id="6_42qqq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a33jj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkdtw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xkdtw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxf2x"]
+bg_color = Color(0.6, 0.827451, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42qqq"]
+bg_color = Color(0.6, 0.6, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2psqf"]
+bg_color = Color(0.6, 0.827451, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5y8m"]
+bg_color = Color(0.6, 0.6, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi1no"]
+bg_color = Color(0.6, 0.827451, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck1n1"]
+bg_color = Color(0.6, 0.6, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a33jj"]
+bg_color = Color(0.187748, 0.55817, 0.64594, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mkmqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkmqd"]
+bg_color = Color(0.926408, 0.832791, 0.644594, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h2jp"]
+bg_color = Color(0.487766, 0.718664, 0.200745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tra4b"]
+bg_color = Color(0.910297, 0.611479, 0.434111, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cqwt"]
+bg_color = Color(0.897051, 0.577015, 0.737749, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkfy2"]
+bg_color = Color(0.575873, 0.705378, 0.915699, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mi7g7"]
+bg_color = Color(0.898039, 0.576471, 0.737255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx7bx"]
+bg_color = Color(0.576471, 0.705882, 0.917647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j31l"]
+bg_color = Color(0.698193, 0.407158, 0.910998, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7bts"]
+bg_color = Color(0.397713, 0.611938, 0.873446, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm7e"]
+bg_color = Color(0.6, 0.243137, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvidk"]
+bg_color = Color(0.6, 0.243137, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ec72m"]
+bg_color = Color(0.6, 0.243137, 0.6, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2psqf"]
+
+[node name="CharacterPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xkdtw")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.655142, 0.430535, 0.929336, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_a33jj")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0.203922, 0.101961, 1, 1)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 471.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xkdtw")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.269
+anchor_right = 0.5
+anchor_bottom = 0.269
+offset_left = -192.5
+offset_top = -135.312
+offset_right = 181.5
+offset_bottom = 157.688
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_xkdtw")
+
+[node name="Player" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 384.0
+offset_right = 404.0
+offset_bottom = 412.0
+theme_override_font_sizes/font_size = 20
+text = "Player"
+
+[node name="HP" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 53.0
+offset_top = 417.0
+offset_right = 405.0
+offset_bottom = 445.0
+theme_override_font_sizes/font_size = 20
+text = "HP"
+
+[node name="Current Equip" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 456.0
+offset_right = 429.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 20
+text = "Current Equip"
+
+[node name="Equip 1" type="Label" parent="Panel/Current Equip"]
+layout_mode = 2
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 381.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 20
+text = "Equip 1"
+
+[node name="Equip 2" type="Label" parent="Panel/Current Equip"]
+layout_mode = 2
+offset_left = 29.0
+offset_top = 54.0
+offset_right = 381.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 20
+text = "Equip 2"
+
+[node name="Current SKill" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 537.0
+offset_right = 429.0
+offset_bottom = 565.0
+theme_override_font_sizes/font_size = 20
+text = "Current Skill"
+
+[node name="Equipment" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -322.0
+offset_right = -3.0
+offset_bottom = 322.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Weapon2" type="Button" parent="Equipment"]
+z_index = 5
+layout_mode = 0
+offset_left = 23.0
+offset_top = 33.0
+offset_right = 187.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxf2x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_42qqq")
+toggle_mode = true
+text = "Weapon"
+
+[node name="Armor2" type="Button" parent="Equipment"]
+z_index = 5
+layout_mode = 0
+offset_left = 188.0
+offset_top = 33.0
+offset_right = 352.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2psqf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c5y8m")
+toggle_mode = true
+text = "Armor"
+
+[node name="Placeholder2" type="Button" parent="Equipment"]
+z_index = 5
+layout_mode = 0
+offset_left = 353.0
+offset_top = 33.0
+offset_right = 532.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pi1no")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ck1n1")
+toggle_mode = true
+text = "Placeholder"
+
+[node name="Weapon" type="Panel" parent="Equipment"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 70.0
+offset_right = 538.0
+offset_bottom = 619.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a33jj")
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Equipment/Weapon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Equipment/Weapon/ScrollContainer"]
+layout_mode = 2
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect3" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect4" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect5" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect6" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect7" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect8" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect9" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect10" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect11" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect12" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect13" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect15" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect16" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect17" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect18" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect19" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect20" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect21" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect22" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect23" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect24" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect25" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect32" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect31" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect30" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect29" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect28" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect27" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect26" type="TextureRect" parent="Equipment/Weapon/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="Armor" type="Panel" parent="Equipment"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 70.0
+offset_right = 537.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Equipment/Armor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Equipment/Armor/ScrollContainer"]
+layout_mode = 2
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect3" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect4" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect5" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect6" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect7" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect8" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect9" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect10" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect11" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect12" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect13" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect15" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect16" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect17" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect18" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect19" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect20" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect21" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect22" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect23" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect24" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect25" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect32" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect31" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect30" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect29" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect28" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect27" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect26" type="TextureRect" parent="Equipment/Armor/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="Placeholder" type="Panel" parent="Equipment"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 537.0
+offset_bottom = 619.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7h2jp")
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Equipment/Placeholder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Equipment/Placeholder/ScrollContainer"]
+layout_mode = 2
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect3" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect4" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect5" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect6" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect7" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect8" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect9" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect10" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect11" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect12" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect13" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect15" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect16" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect17" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect18" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect19" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect20" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect21" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect22" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect23" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect24" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect25" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect32" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect31" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect30" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect29" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect28" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect27" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="TextureRect26" type="TextureRect" parent="Equipment/Placeholder/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+expand_mode = 2
+
+[node name="Skill" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -322.0
+offset_right = -3.0
+offset_bottom = 322.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tra4b")
+metadata/_edit_lock_ = true
+
+[node name="Active" type="Button" parent="Skill"]
+z_index = 3
+layout_mode = 0
+offset_left = 78.0
+offset_top = 31.0
+offset_right = 256.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5cqwt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lkfy2")
+toggle_mode = true
+text = "Active"
+metadata/_edit_lock_ = true
+
+[node name="Passive" type="Button" parent="Skill"]
+z_index = 3
+layout_mode = 0
+offset_left = 298.0
+offset_top = 31.0
+offset_right = 476.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mi7g7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yx7bx")
+toggle_mode = true
+text = "Passive"
+metadata/_edit_lock_ = true
+
+[node name="Active2" type="Panel" parent="Skill"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 70.0
+offset_right = 529.0
+offset_bottom = 563.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2j31l")
+metadata/_edit_lock_ = true
+
+[node name="ActiveSkill1" type="TextureButton" parent="Skill/Active2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -91.5
+offset_right = 97.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_a33jj")
+stretch_mode = 0
+
+[node name="Passive2" type="Panel" parent="Skill"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 70.0
+offset_right = 529.0
+offset_bottom = 563.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m7bts")
+metadata/_edit_lock_ = true
+
+[node name="PassiveSkill1" type="TextureButton" parent="Skill/Passive2"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 160.0
+offset_right = 216.0
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_7h2jp")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="PassiveSkill2" type="TextureButton" parent="Skill/Passive2"]
+layout_mode = 2
+offset_left = 285.0
+offset_top = 160.0
+offset_right = 451.0
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_hxf2x")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Customize" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -322.0
+offset_right = -3.0
+offset_bottom = 322.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tra4b")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -108.0
+offset_bottom = 115.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Equip" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpm7e")
+toggle_mode = true
+text = "EQUIP"
+
+[node name="Skill" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lvidk")
+toggle_mode = true
+text = "SKILL"
+
+[node name="Customize" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ec72m")
+toggle_mode = true
+text = "CUSTOMIZE"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="PassiveSkills" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(750, 300)
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PassiveSkills"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="PassiveSkills/ScrollContainer"]
+layout_mode = 2
+columns = 7
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureButton" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_7h2jp")
+stretch_mode = 0
+
+[node name="TextureRect2" type="TextureButton" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_hxf2x")
+stretch_mode = 0
+
+[node name="TextureRect3" type="TextureButton" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("5_hxf2x")
+stretch_mode = 0
+
+[node name="TextureRect4" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect5" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect6" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect7" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect8" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect9" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect10" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect11" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect12" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect13" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect15" type="TextureRect" parent="PassiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="ActiveSkills" type="Window" parent="."]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(800, 300)
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ActiveSkills"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="ActiveSkills/ScrollContainer"]
+layout_mode = 2
+columns = 7
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_a33jj")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("6_42qqq")
+
+[node name="TextureRect3" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_2psqf")
+
+[node name="TextureRect4" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect5" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect6" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect7" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect8" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect9" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect10" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect11" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect12" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect13" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect15" type="TextureRect" parent="ActiveSkills/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[connection signal="pressed" from="Equipment/Weapon2" to="." method="_on_weapon_2_pressed"]
+[connection signal="pressed" from="Equipment/Armor2" to="." method="_on_armor_2_pressed"]
+[connection signal="pressed" from="Equipment/Placeholder2" to="." method="_on_placeholder_2_pressed"]
+[connection signal="pressed" from="Skill/Active" to="." method="_on_active_pressed"]
+[connection signal="pressed" from="Skill/Passive" to="." method="_on_passive_pressed"]
+[connection signal="pressed" from="Skill/Active2/ActiveSkill1" to="." method="_on_active_skill_1_pressed"]
+[connection signal="pressed" from="Skill/Passive2/PassiveSkill1" to="." method="_on_passive_skill_1_pressed"]
+[connection signal="pressed" from="Skill/Passive2/PassiveSkill2" to="." method="_on_passive_skill_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Equip" to="." method="_on_equip_pressed"]
+[connection signal="pressed" from="VBoxContainer/Skill" to="." method="_on_skill_pressed"]
+[connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customize_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="close_requested" from="PassiveSkills" to="." method="_on_passive_skills_close_requested"]
+[connection signal="close_requested" from="ActiveSkills" to="." method="_on_active_skills_close_requested"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2utovt4d6tv8"]
+
+[ext_resource type="Texture2D" uid="uid://m0ilh6yswe1m" path="res://icon.svg" id="2_xrmgs"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rsc2u"]
+
+[node name="store_item" type="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 284.0
+offset_bottom = 423.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.916726, 0.162508, 0.52688, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_rsc2u")
+
+[node name="itemName" type="Label" parent="."]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Buy" type="Button" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Buy 100 coins"
+icon = ExtResource("2_xrmgs")

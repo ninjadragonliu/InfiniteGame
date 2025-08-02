@@ -1,0 +1,207 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgq15ls3cbcv7"]
+
+[ext_resource type="Script" uid="uid://bprokssqma1e" path="res://Scripts/overworld_map.gd" id="1_4raw4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4nuo2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4raw4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_def1s"]
+
+[node name="Overworld Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4raw4")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.470068, 0.379129, 0.79383, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_4nuo2")
+metadata/_edit_lock_ = true
+
+[node name="City" type="TextureRect" parent="."]
+self_modulate = Color(0.215686, 0.282353, 0.313726, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -238.0
+offset_right = 233.0
+offset_bottom = -74.0
+grow_vertical = 0
+texture = SubResource("CanvasTexture_4raw4")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="City"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "City"
+
+[node name="Water body" type="TextureRect" parent="."]
+self_modulate = Color(0, 0.724822, 0.725117, 1)
+layout_mode = 0
+offset_left = 688.0
+offset_top = 230.0
+offset_right = 871.0
+offset_bottom = 349.0
+texture = SubResource("CanvasTexture_def1s")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Water body"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -11.5
+offset_right = 47.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Water  Body"
+
+[node name="Button 10" type="Button" parent="."]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 473.0
+offset_right = 619.0
+offset_bottom = 504.0
+text = "Button 10"
+metadata/_edit_lock_ = true
+
+[node name="Button 11" type="Button" parent="."]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 466.0
+offset_right = 409.0
+offset_bottom = 497.0
+text = "Button 11"
+metadata/_edit_lock_ = true
+
+[node name="Button 9" type="Button" parent="."]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 476.0
+offset_right = 848.0
+offset_bottom = 507.0
+text = "Button 9"
+metadata/_edit_lock_ = true
+
+[node name="Button 8" type="Button" parent="."]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 480.0
+offset_right = 1038.0
+offset_bottom = 511.0
+text = "Button 8"
+metadata/_edit_lock_ = true
+
+[node name="Button 7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 278.0
+offset_right = 914.0
+offset_bottom = 309.0
+text = "Button 7"
+metadata/_edit_lock_ = true
+
+[node name="Button 6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 255.0
+offset_right = 1053.0
+offset_bottom = 286.0
+text = "Button 6"
+metadata/_edit_lock_ = true
+
+[node name="Button 4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 179.0
+offset_right = 585.0
+offset_bottom = 210.0
+text = "Button 4"
+metadata/_edit_lock_ = true
+
+[node name="Button 5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 975.0
+offset_top = 66.0
+offset_right = 1037.0
+offset_bottom = 97.0
+text = "Button 5"
+metadata/_edit_lock_ = true
+
+[node name="Button 3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 53.0
+offset_right = 683.0
+offset_bottom = 84.0
+text = "Button 3"
+metadata/_edit_lock_ = true
+
+[node name="Button 2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 64.0
+offset_right = 188.0
+offset_bottom = 95.0
+text = "Button 2"
+metadata/_edit_lock_ = true
+
+[node name="Button 1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 190.0
+offset_right = 194.0
+offset_bottom = 221.0
+text = "Button 1"
+metadata/_edit_lock_ = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Button 10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Button 11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="Button 9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Button 8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Button 7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Button 6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button 4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button 5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button 3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button 2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button 1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

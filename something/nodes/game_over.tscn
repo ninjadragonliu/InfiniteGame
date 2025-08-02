@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbvx83k6u7h4k"]
+
+[ext_resource type="Script" uid="uid://1f2eu2adxvod" path="res://Scripts/game_over.gd" id="1_dadei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c66do"]
+bg_color = Color(0.266603, 0.253731, 0.276689, 1)
+
+[node name="Game Over" type="Window"]
+process_mode = 2
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(700, 400)
+transient = true
+exclusive = true
+borderless = true
+script = ExtResource("1_dadei")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c66do")
+
+[node name="You Died" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 65.0
+offset_right = 135.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "You Died"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -166.0
+offset_bottom = 50.0
+grow_horizontal = 0
+metadata/_edit_group_ = true
+
+[node name="Coins" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Coins: 1000"
+
+[node name="Diamonds" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Diamonds: 1"
+
+[node name="Ad" type="Button" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -22.0
+offset_right = -107.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 13
+text = "AD (to continue)"
+autowrap_mode = 3
+
+[node name="Back to Menu" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -130.0
+offset_right = -43.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back to Menu"
+
+[node name="Retry" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -131.0
+offset_right = 142.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Retry"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 238.0
+offset_top = 140.0
+offset_right = 468.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 26
+text = "Your Score Was 10"
+
+[connection signal="pressed" from="Back to Menu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://c8vghgsfhtr3"]
+
+[ext_resource type="Texture2D" uid="uid://bsdjfibajovyw" path="res://Assets/Animation/Effects/explosion_general.png" id="1_hjmkv"]
+[ext_resource type="Script" uid="uid://goirfs4wotl3" path="res://Scripts/explosion.gd" id="2_7pcsp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fj1v"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(0, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikia7"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(176, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yui6"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(352, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5t2i"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(528, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ngr"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(704, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn0ld"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(880, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgpy0"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(1056, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2t4p"]
+atlas = ExtResource("1_hjmkv")
+region = Rect2(1232, 0, 176, 175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j04cv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fj1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikia7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yui6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5t2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn0ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgpy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2t4p")
+}],
+"loop": true,
+"name": &"explosion_default",
+"speed": 20.0
+}]
+
+[node name="Explosion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_j04cv")
+animation = &"explosion_default"
+script = ExtResource("2_7pcsp")

@@ -1,0 +1,390 @@
+[gd_scene load_steps=10 format=3 uid="uid://b7i2048r8mry2"]
+
+[ext_resource type="Script" uid="uid://ddtgx5pom42ct" path="res://Scripts/settings.gd" id="1_4geyq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_eyi13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2dne"]
+bg_color = Color(0.560784, 0.603922, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kysc"]
+bg_color = Color(0.560784, 0.603922, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4geyq"]
+bg_color = Color(0.282353, 0.282353, 0.282353, 0.603922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i44u3"]
+bg_color = Color(0.446777, 0.446777, 0.446777, 0.368627)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyi13"]
+bg_color = Color(0.388235, 0.388235, 0.388235, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhmql"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 0.270588)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaqfp"]
+bg_color = Color(0.427451, 0.427451, 0.427451, 0.364706)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4geyq")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.652071, 0, 0.163455, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_eyi13")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+self_modulate = Color(0.4, 0.219608, 0.494118, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -249.0
+offset_right = 204.0
+offset_bottom = 324.0
+grow_vertical = 2
+theme_override_constants/separation = -1
+
+[node name="General" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.506844, 0.224033, 0.710026, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j2dne")
+toggle_mode = true
+text = "General"
+
+[node name="Support" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.505882, 0.223529, 0.709804, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6kysc")
+toggle_mode = true
+text = "Support"
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4geyq")
+
+[node name="General" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 73.0
+offset_right = 1153.0
+offset_bottom = 646.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="UID" type="Label" parent="General"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.5
+offset_top = -181.5
+offset_right = -48.5
+offset_bottom = -139.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i44u3")
+text = "UID:"
+
+[node name="Label" type="Label" parent="General/UID"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 30
+text = "UID："
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Resolution" type="OptionButton" parent="General"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -334.5
+offset_top = -124.0
+offset_right = -187.5
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+selected = 0
+item_count = 2
+popup/item_0/text = "1080p"
+popup/item_0/id = 0
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="General/Resolution"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -19.5
+offset_right = 172.0
+offset_bottom = 22.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Resolution"
+
+[node name="Audio" type="CheckBox" parent="General"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.5
+offset_top = -50.0
+offset_right = -206.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio"
+
+[node name="Sound Effect" type="CheckBox" parent="General"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.5
+offset_top = 1.0
+offset_right = -107.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound Effect"
+
+[node name="Redeem Code" type="Label" parent="General"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -308.5
+offset_top = -206.0
+offset_right = 226.5
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_eyi13")
+text = "Redeem Code"
+
+[node name="Code Submit" type="Button" parent="General/Redeem Code"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -23.5
+offset_right = 122.0
+offset_bottom = 26.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Submit"
+
+[node name="Code" type="Button" parent="General/Redeem Code"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Support" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_top = 73.0
+offset_right = 1153.0
+offset_bottom = 646.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Email" type="Label" parent="Support"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.5
+offset_top = -208.0
+offset_right = 165.5
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_lhmql")
+text = "Email"
+
+[node name="Email" type="Button" parent="Support/Email"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reason" type="OptionButton" parent="Support"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.5
+offset_top = -151.0
+offset_right = -33.5
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+selected = 0
+item_count = 1
+popup/item_0/text = "Reason for Issue"
+popup/item_0/id = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Support"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.5
+offset_top = -78.0
+offset_right = 273.5
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_aaqfp")
+text = "Details..."
+
+[node name="Details" type="Button" parent="Support/RichTextLabel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Support Submit" type="Button" parent="Support"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -313.0
+offset_top = -111.0
+offset_right = -202.0
+offset_bottom = -59.876
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Submit"
+metadata/_edit_lock_ = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="Email" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(400, 100)
+ok_button_text = "Confirm"
+
+[node name="LineEdit" type="LineEdit" parent="Email"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 51.0
+placeholder_text = "Enter Email"
+
+[node name="Details" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(600, 200)
+ok_button_text = "Confirm"
+
+[node name="TextEdit" type="TextEdit" parent="Details"]
+offset_right = 8.0
+offset_bottom = 8.0
+placeholder_text = "Explain your issue"
+
+[node name="Code" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(400, 100)
+
+[node name="LineEdit" type="LineEdit" parent="Code"]
+offset_right = 68.5625
+offset_bottom = 31.0
+placeholder_text = "Enter code"
+
+[connection signal="pressed" from="VBoxContainer/General" to="." method="_on_general_pressed"]
+[connection signal="pressed" from="VBoxContainer/Support" to="." method="_on_support_pressed"]
+[connection signal="pressed" from="General/Redeem Code/Code Submit" to="." method="_on_code_submit_pressed"]
+[connection signal="pressed" from="General/Redeem Code/Code" to="." method="_on_code_pressed"]
+[connection signal="pressed" from="Support/Email/Email" to="." method="_on_email_pressed"]
+[connection signal="pressed" from="Support/RichTextLabel/Details" to="." method="_on_details_pressed"]
+[connection signal="pressed" from="Support/Support Submit" to="." method="_on_support_submit_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="confirmed" from="Email" to="." method="_on_email_confirmed"]
+[connection signal="confirmed" from="Details" to="." method="_on_details_confirmed"]
+[connection signal="confirmed" from="Code" to="." method="_on_code_confirmed"]

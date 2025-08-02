@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlhpeoka1b654"]
+
+[ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
+[ext_resource type="Script" uid="uid://b6x87sv7lgrec" path="res://Scripts/enemies.gd" id="3_5a7ea"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yp4wr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a02cp"]
+specular_color = Color(0.275787, 0.48891, 0.254303, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_go701"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5a7ea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ea"]
+size = Vector2(10, 457)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j60k"]
+size = Vector2(10, 461)
+
+[node name="World" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a02cp")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.65098, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_yp4wr")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="TextureRect" parent="."]
+modulate = Color(0.174241, 0.685644, 0.198529, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 466.0
+offset_right = 1153.0
+offset_bottom = 651.0
+texture = SubResource("CanvasTexture_a02cp")
+metadata/_edit_lock_ = true
+
+[node name="PlatformLeft" type="TextureRect" parent="."]
+self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 177.0
+offset_right = 280.0
+offset_bottom = 231.0
+texture = SubResource("CanvasTexture_go701")
+metadata/_edit_lock_ = true
+
+[node name="PlatformRight" type="TextureRect" parent="."]
+self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
+layout_mode = 0
+offset_left = 873.0
+offset_top = 177.0
+offset_right = 1152.0
+offset_bottom = 231.0
+texture = SubResource("CanvasTexture_go701")
+metadata/_edit_lock_ = true
+
+[node name="Health" type="TextureRect" parent="."]
+self_modulate = Color(0.0579798, 0.524882, 0, 1)
+layout_mode = 0
+offset_left = 499.0
+offset_top = 277.0
+offset_right = 671.0
+offset_bottom = 310.0
+texture = SubResource("CanvasTexture_5a7ea")
+
+[node name="Label" type="Label" parent="Health"]
+layout_mode = 0
+offset_right = 171.0
+offset_bottom = 34.0
+text = "100 / 100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_5a7ea")]
+position = Vector2(587, 394)
+
+[node name="Left" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -137.0
+offset_right = 236.0
+offset_bottom = -44.0
+grow_vertical = 0
+text = "<"
+
+[node name="Right" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -132.0
+offset_right = -45.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+text = ">"
+
+[node name="LineLeft" type="Area2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="LineLeft"]
+points = PackedVector2Array(440, 5, 440, 247, 440, 462)
+default_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineLeft"]
+position = Vector2(440, 233.5)
+shape = SubResource("RectangleShape2D_5a7ea")
+
+[node name="LineRight" type="Area2D" parent="."]
+
+[node name="Line2D2" type="Line2D" parent="LineRight"]
+points = PackedVector2Array(736, 2, 736, 229, 736, 463)
+default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineRight"]
+position = Vector2(736, 232.5)
+shape = SubResource("RectangleShape2D_8j60k")
+
+[node name="Enemies" type="Node" parent="." groups=["enemy manager"]]
+
+[node name="Enemies2" type="Node2D" parent="."]
+script = ExtResource("3_5a7ea")
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="body_entered" from="LineLeft" to="." method="_on_line_left_body_entered"]
+[connection signal="body_entered" from="LineRight" to="." method="_on_line_right_body_entered"]

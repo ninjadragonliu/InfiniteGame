@@ -1,0 +1,368 @@
+[gd_scene load_steps=30 format=3 uid="uid://dlhpeoka1b654"]
+
+[ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
+[ext_resource type="Script" uid="uid://b6x87sv7lgrec" path="res://Scripts/enemies.gd" id="3_5a7ea"]
+[ext_resource type="Texture2D" uid="uid://cr2hniff5hcwe" path="res://Assets/Landscape/Ocean.png" id="3_k7acu"]
+[ext_resource type="Texture2D" uid="uid://dogqnobttpla6" path="res://Assets/Clouds 6.png" id="3_o06y3"]
+[ext_resource type="Texture2D" uid="uid://dme0hqlqv07ng" path="res://Assets/Landscape/stage.png" id="4_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://umxr8kup42na" path="res://nodes/clear_window.tscn" id="4_8j60k"]
+[ext_resource type="Texture2D" uid="uid://cp5u1usid1f40" path="res://Assets/Landscape/platform_left.png" id="5_o06y3"]
+[ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="8_0fj1v"]
+[ext_resource type="Texture2D" uid="uid://bsdjfibajovyw" path="res://Assets/Animation/Effects/explosion_general.png" id="9_5v1tr"]
+[ext_resource type="Texture2D" uid="uid://c7gy32v1morpq" path="res://Assets/1292 - Icon_pressed.png" id="9_ikia7"]
+[ext_resource type="Texture2D" uid="uid://vyhvkcgtxl8u" path="res://Assets/Token.png" id="12_kn0ld"]
+[ext_resource type="Texture2D" uid="uid://181gfrt10e1d" path="res://Assets/JPEG/daggers (5).jpg" id="13_hgpy0"]
+[ext_resource type="Texture2D" uid="uid://gx4y0ch4pb8i" path="res://Assets/JPEG/daggers (7).jpg" id="14_t2t4p"]
+[ext_resource type="Texture2D" uid="uid://dhjw3xgeixb4x" path="res://Assets/JPEG/daggers (9).jpg" id="15_0pcbe"]
+[ext_resource type="Script" uid="uid://b17q51ds0whtu" path="res://Scripts/skill_effect.gd" id="16_hgpy0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
+bg_color = Color(0.868978, 0, 0.222608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo5ed"]
+bg_color = Color(0.247059, 0.854902, 0.239216, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ea"]
+size = Vector2(10, 457)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j60k"]
+size = Vector2(10, 461)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fj1v"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(0, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikia7"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(176, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yui6"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(352, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5t2i"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(528, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ngr"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(704, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn0ld"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(880, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgpy0"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(1056, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2t4p"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(1232, 0, 176, 175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pcbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fj1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikia7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yui6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5t2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn0ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgpy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2t4p")
+}],
+"loop": true,
+"name": &"explosion_default",
+"speed": 5.0
+}]
+
+[node name="World" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a02cp")
+clear_screen = ExtResource("4_8j60k")
+metadata/_edit_lock_ = true
+
+[node name="Ocean" type="Sprite2D" parent="."]
+position = Vector2(575, 266.5)
+scale = Vector2(1.12561, 1.49728)
+texture = ExtResource("3_k7acu")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_o06y3")
+expand_mode = 1
+
+[node name="Ground" type="TextureRect" parent="."]
+self_modulate = Color(0.980263, 0.649225, 0.629422, 1)
+layout_mode = 0
+offset_left = -14.0
+offset_top = 475.0
+offset_right = 1152.0
+offset_bottom = 660.0
+texture = ExtResource("4_5ukr8")
+
+[node name="PlatformLeft" type="TextureRect" parent="."]
+self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 190.0
+offset_right = 309.0
+offset_bottom = 244.0
+texture = ExtResource("5_o06y3")
+
+[node name="PlatformRight" type="TextureRect" parent="."]
+self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
+layout_mode = 0
+offset_left = 844.0
+offset_top = 190.0
+offset_right = 1154.0
+offset_bottom = 244.0
+texture = ExtResource("5_o06y3")
+flip_h = true
+
+[node name="Health" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 277.0
+offset_right = 671.0
+offset_bottom = 309.0
+theme_override_styles/background = SubResource("StyleBoxFlat_8j60k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fo5ed")
+value = 100.0
+show_percentage = false
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Health"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = -17.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100 / 100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("2_5a7ea")]
+position = Vector2(587, 394)
+metadata/_edit_lock_ = true
+
+[node name="Left" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -136.0
+offset_right = 225.0
+offset_bottom = -36.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "<"
+metadata/_edit_lock_ = true
+
+[node name="Right" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -137.0
+offset_right = -67.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = ">"
+metadata/_edit_lock_ = true
+
+[node name="Skills" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = -136.0
+offset_right = 297.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("8_0fj1v")
+texture_pressed = ExtResource("9_ikia7")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="LineLeft" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Line2D" type="Line2D" parent="LineLeft"]
+points = PackedVector2Array(440, 5, 440, 247, 440, 462)
+default_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineLeft"]
+position = Vector2(440, 233.5)
+shape = SubResource("RectangleShape2D_5a7ea")
+
+[node name="LineRight" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Line2D2" type="Line2D" parent="LineRight"]
+points = PackedVector2Array(736, 2, 736, 229, 736, 463)
+default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineRight"]
+position = Vector2(736, 232.5)
+shape = SubResource("RectangleShape2D_8j60k")
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("3_5a7ea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_0pcbe")
+animation = &"explosion_default"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 8.0
+offset_right = -14.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Score:"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Score"]
+layout_mode = 0
+offset_left = 104.0
+offset_right = 164.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "10"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+clip_children = 1
+layout_mode = 0
+offset_left = 280.0
+offset_top = 520.0
+offset_right = 370.0
+offset_bottom = 610.0
+texture = ExtResource("12_kn0ld")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Fist" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+disabled = true
+texture_normal = ExtResource("13_hgpy0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+clip_children = 1
+layout_mode = 0
+offset_left = 416.0
+offset_top = 520.0
+offset_right = 506.0
+offset_bottom = 610.0
+texture = ExtResource("12_kn0ld")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Sword" type="TextureButton" parent="TextureRect2"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+disabled = true
+texture_normal = ExtResource("14_t2t4p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+clip_children = 1
+layout_mode = 0
+offset_left = 560.0
+offset_top = 520.0
+offset_right = 650.0
+offset_bottom = 610.0
+texture = ExtResource("12_kn0ld")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Lance" type="TextureButton" parent="TextureRect3"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+disabled = true
+texture_normal = ExtResource("15_0pcbe")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Skill_effect" type="Node" parent="."]
+script = ExtResource("16_hgpy0")
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Skills" to="." method="_on_skills_pressed"]
+[connection signal="body_entered" from="LineLeft" to="." method="_on_line_left_body_entered"]
+[connection signal="body_entered" from="LineRight" to="." method="_on_line_right_body_entered"]
+[connection signal="pressed" from="TextureRect/Fist" to="." method="_on_fist_pressed"]
+[connection signal="pressed" from="TextureRect2/Sword" to="." method="_on_sword_pressed"]
+[connection signal="pressed" from="TextureRect3/Lance" to="." method="_on_lance_pressed"]

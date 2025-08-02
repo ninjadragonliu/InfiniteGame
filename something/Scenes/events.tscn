@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba45tkquyamfl"]
+
+[ext_resource type="Script" uid="uid://df8i2ouvnfse2" path="res://Scripts/events.gd" id="1_pbwiu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6l0bw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pbwiu"]
+
+[node name="Events" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pbwiu")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.648545, 0.143997, 5.77569e-07, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_6l0bw")
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 110.0
+offset_right = 250.0
+offset_bottom = 510.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "button"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -59.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.454902, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -893.0
+offset_top = -215.0
+offset_bottom = 215.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("CanvasTexture_pbwiu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 485.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Events"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqhxbb5e6y7gu"]
+
+[ext_resource type="Script" uid="uid://d4fpr4o3na6na" path="res://Scripts/profile.gd" id="1_2k2d6"]
+[ext_resource type="Texture2D" uid="uid://dgucplc4q062k" path="res://Assets/W_Title.webp" id="2_ot2ja"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knc83"]
+bg_color = Color(0.174453, 0.445515, 0.445613, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_knc83"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5moa6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xuaho"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dalnn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Profile" type="Window"]
+initial_position = 1
+size = Vector2i(1100, 600)
+transient = true
+exclusive = true
+borderless = true
+script = ExtResource("1_2k2d6")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_knc83")
+metadata/_edit_lock_ = true
+
+[node name="Profile Pic" type="TextureButton" parent="."]
+offset_left = 33.0
+offset_top = 39.0
+offset_right = 156.0
+offset_bottom = 156.0
+texture_normal = SubResource("CanvasTexture_knc83")
+stretch_mode = 0
+
+[node name="Back" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 188.0
+offset_top = 49.0
+offset_right = 573.0
+offset_bottom = 152.0
+
+[node name="PlayerName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5moa6")
+text = "Player Name: "
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/PlayerName"]
+layout_mode = 0
+offset_left = 386.0
+offset_top = -9.0
+offset_right = 495.0
+offset_bottom = 63.0
+texture_normal = ExtResource("2_ot2ja")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ID" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Id: "
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 7.0
+offset_right = 81.0
+offset_bottom = 30.0
+text = "VIP"
+
+[node name="Change Background" type="TextureButton" parent="."]
+self_modulate = Color(0.141176, 1, 0.184314, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -41.0
+offset_top = 55.0
+offset_right = -1.0
+offset_bottom = 95.0
+grow_horizontal = 0
+texture_normal = SubResource("CanvasTexture_xuaho")
+
+[node name="Character" type="Panel" parent="."]
+offset_left = 685.0
+offset_top = 50.0
+offset_right = 914.0
+offset_bottom = 279.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 73.0
+offset_top = 220.0
+offset_right = 503.0
+offset_bottom = 316.0
+metadata/_edit_group_ = true
+
+[node name="Current Level" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Current Level: 1"
+
+[node name="Wave" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Wave: 10"
+
+[node name="Introduction" type="RichTextLabel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -160.0
+offset_right = -50.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 30
+text = "Introduce yourself"
+
+[node name="Button" type="Button" parent="Introduction"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dalnn")
+
+[node name="Name" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(400, 100)
+always_on_top = true
+ok_button_text = "Confirm"
+dialog_autowrap = true
+
+[node name="LineEdit" type="LineEdit" parent="Name"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 51.0
+
+[node name="Intro" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(600, 200)
+always_on_top = true
+ok_button_text = "Confirm"
+
+[node name="TextEdit" type="TextEdit" parent="Intro"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 592.0
+offset_bottom = 151.0
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/PlayerName/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Introduction/Button" to="." method="_on_button_pressed"]
+[connection signal="confirmed" from="Name" to="." method="_on_popup_confirmed"]
+[connection signal="confirmed" from="Intro" to="." method="_on_accept_dialog_confirmed"]
