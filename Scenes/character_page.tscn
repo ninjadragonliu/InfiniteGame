@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bxnto03l5mjxr"]
+[gd_scene load_steps=32 format=3 uid="uid://bxnto03l5mjxr"]
 
 [ext_resource type="Script" uid="uid://bsplvgh7yjodf" path="res://Scripts/character_page.gd" id="1_xkdtw"]
 [ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="2_a33jj"]
@@ -60,6 +60,8 @@ bg_color = Color(0.698193, 0.407158, 0.910998, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7bts"]
 bg_color = Color(0.397713, 0.611938, 0.873446, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_42qqq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm7e"]
 bg_color = Color(0.6, 0.243137, 0.6, 1)
@@ -211,6 +213,7 @@ theme_override_font_sizes/font_size = 20
 text = "Passive2"
 
 [node name="Equipment" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -445,7 +448,6 @@ stretch_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Customize" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -460,6 +462,70 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tra4b")
 metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Customize"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 71.0
+offset_right = 515.0
+offset_bottom = 491.0
+
+[node name="Hair" type="HBoxContainer" parent="Customize/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HairStyleLeft" type="Button" parent="Customize/VBoxContainer/Hair"]
+layout_mode = 2
+text = "<"
+
+[node name="TextureRect" type="TextureRect" parent="Customize/VBoxContainer/Hair"]
+self_modulate = Color(0.364706, 0.407843, 1, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("CanvasTexture_42qqq")
+
+[node name="HairStyleRight" type="Button" parent="Customize/VBoxContainer/Hair"]
+layout_mode = 2
+text = ">"
+
+[node name="OutfitTop" type="HBoxContainer" parent="Customize/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TopLeft" type="Button" parent="Customize/VBoxContainer/OutfitTop"]
+layout_mode = 2
+text = "<"
+
+[node name="TextureRect" type="TextureRect" parent="Customize/VBoxContainer/OutfitTop"]
+self_modulate = Color(0.404187, 0.550508, 0.253, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("CanvasTexture_42qqq")
+
+[node name="TopRight" type="Button" parent="Customize/VBoxContainer/OutfitTop"]
+layout_mode = 2
+text = ">"
+
+[node name="OutfitBottom" type="HBoxContainer" parent="Customize/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BottomLeft" type="Button" parent="Customize/VBoxContainer/OutfitBottom"]
+layout_mode = 2
+text = "<"
+
+[node name="TextureRect" type="TextureRect" parent="Customize/VBoxContainer/OutfitBottom"]
+self_modulate = Color(0.807954, 0.309056, 0.284602, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("CanvasTexture_42qqq")
+
+[node name="BottomRight" type="Button" parent="Customize/VBoxContainer/OutfitBottom"]
+layout_mode = 2
+text = ">"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
