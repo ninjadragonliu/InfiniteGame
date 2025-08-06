@@ -3,6 +3,15 @@ extends Control
 var passive_slot = 0
 var player_weapon_type_id = 0
 
+var current_hairstyle: int = 0
+var hairstyles_array : Array = []
+
+var current_outfit_top: int = 0
+var outfit_top_array : Array = []
+
+var current_outfit_bottom: int = 0
+var outfit_bottom_array : Array = []
+
 func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
 	$Equipment.show()
