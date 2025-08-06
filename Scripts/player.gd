@@ -76,13 +76,25 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		take_damaged.emit()
 
 func change_weapon():
-	var resource_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[7][1]][0]+".png")
+#	for i in range(4):
+#		match i:
+#			0:
+#				pass
 	
-	$Body.texture = resource_path
-	$Pants.texture = resource_path
-	$Clothe.texture = resource_path
-	$Hair.texture = resource_path
-	$Weapon.texture = resource_path
+	var character_resource_path = load("res://Assets/Animation/MainCharacter/"
+	#+whatever the costumes are named [folder]+"/"
+	+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[11][1]][0]+".png")
+	
+	var weapon_resource_path  = load("res://Assets/Animation/MainCharacter/"
+	+"weapon_and_effect/"
+	+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[11][1]][0]+".png")
+	
+	$Body_atk.texture = character_resource_path
+	$Pants_atk.texture = character_resource_path
+	$Clothe_atk.texture = character_resource_path
+	$Hair_atk.texture = character_resource_path
+	$Weapon_atk.texture = weapon_resource_path
+	$Effect_atk.texture = weapon_resource_path
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	left_button.disabled = true
@@ -93,4 +105,14 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	left_button.disabled = false
 	right_button.disabled = false
 	#print("buttons enabled")
-	
+
+
+#region animation data
+func play_animation_playerAtk():
+	pass
+func play_animation_playerIdle():
+	pass
+func play_animation_playerIdle_loop():
+	pass
+# Idle has 7 frames and attack has 10 frames
+#endregion
