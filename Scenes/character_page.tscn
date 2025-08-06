@@ -61,7 +61,8 @@ bg_color = Color(0.698193, 0.407158, 0.910998, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7bts"]
 bg_color = Color(0.397713, 0.611938, 0.873446, 1)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_42qqq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxdvd"]
+bg_color = Color(0.6, 0.25098, 0.6, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm7e"]
 bg_color = Color(0.6, 0.243137, 0.6, 1)
@@ -460,72 +461,121 @@ offset_right = -3.0
 offset_bottom = 322.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tra4b")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxdvd")
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Customize"]
+[node name="Hair2" type="Button" parent="Customize"]
+z_index = 5
 layout_mode = 0
-offset_left = 3.0
-offset_top = 71.0
-offset_right = 515.0
-offset_bottom = 491.0
+offset_left = 19.0
+offset_top = 21.0
+offset_right = 183.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxf2x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_42qqq")
+toggle_mode = true
+text = "Hair"
 
-[node name="Hair" type="HBoxContainer" parent="Customize/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
+[node name="OutfitTop2" type="Button" parent="Customize"]
+z_index = 5
+layout_mode = 0
+offset_left = 184.0
+offset_top = 21.0
+offset_right = 348.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2psqf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c5y8m")
+toggle_mode = true
+text = "Top"
 
-[node name="HairStyleLeft" type="Button" parent="Customize/VBoxContainer/Hair"]
-layout_mode = 2
-text = "<"
+[node name="OutfitBottom2" type="Button" parent="Customize"]
+z_index = 5
+layout_mode = 0
+offset_left = 349.0
+offset_top = 21.0
+offset_right = 528.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pi1no")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ck1n1")
+toggle_mode = true
+text = "Bottom"
 
-[node name="TextureRect" type="TextureRect" parent="Customize/VBoxContainer/Hair"]
-self_modulate = Color(0.364706, 0.407843, 1, 1)
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = SubResource("CanvasTexture_42qqq")
+[node name="Hair" type="Panel" parent="Customize"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 70.0
+offset_right = 538.0
+offset_bottom = 619.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a33jj")
+metadata/_edit_lock_ = true
 
-[node name="HairStyleRight" type="Button" parent="Customize/VBoxContainer/Hair"]
-layout_mode = 2
-text = ">"
+[node name="ScrollContainer" type="ScrollContainer" parent="Customize/Hair"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="OutfitTop" type="HBoxContainer" parent="Customize/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Customize/Hair/ScrollContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
-[node name="TopLeft" type="Button" parent="Customize/VBoxContainer/OutfitTop"]
-layout_mode = 2
-text = "<"
+[node name="Top" type="Panel" parent="Customize"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 70.0
+offset_right = 537.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mkmqd")
+metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Customize/VBoxContainer/OutfitTop"]
-self_modulate = Color(0.404187, 0.550508, 0.253, 1)
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = SubResource("CanvasTexture_42qqq")
+[node name="ScrollContainer" type="ScrollContainer" parent="Customize/Top"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TopRight" type="Button" parent="Customize/VBoxContainer/OutfitTop"]
+[node name="GridContainer" type="GridContainer" parent="Customize/Top/ScrollContainer"]
 layout_mode = 2
-text = ">"
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
-[node name="OutfitBottom" type="HBoxContainer" parent="Customize/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
+[node name="Bottom" type="Panel" parent="Customize"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 537.0
+offset_bottom = 619.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7h2jp")
+metadata/_edit_lock_ = true
 
-[node name="BottomLeft" type="Button" parent="Customize/VBoxContainer/OutfitBottom"]
-layout_mode = 2
-text = "<"
+[node name="ScrollContainer" type="ScrollContainer" parent="Customize/Bottom"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Customize/VBoxContainer/OutfitBottom"]
-self_modulate = Color(0.807954, 0.309056, 0.284602, 1)
-custom_minimum_size = Vector2(50, 50)
+[node name="GridContainer" type="GridContainer" parent="Customize/Bottom/ScrollContainer"]
 layout_mode = 2
-texture = SubResource("CanvasTexture_42qqq")
-
-[node name="BottomRight" type="Button" parent="Customize/VBoxContainer/OutfitBottom"]
-layout_mode = 2
-text = ">"
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -772,6 +822,9 @@ texture = SubResource("CanvasTexture_mkmqd")
 [connection signal="pressed" from="Skill/Active2/ActiveSkill1" to="." method="_on_active_skill_1_pressed"]
 [connection signal="pressed" from="Skill/Passive2/PassiveSkill1" to="." method="_on_passive_skill_1_pressed"]
 [connection signal="pressed" from="Skill/Passive2/PassiveSkill2" to="." method="_on_passive_skill_2_pressed"]
+[connection signal="pressed" from="Customize/Hair2" to="." method="_on_hair_2_pressed"]
+[connection signal="pressed" from="Customize/OutfitTop2" to="." method="_on_outfit_top_2_pressed"]
+[connection signal="pressed" from="Customize/OutfitBottom2" to="." method="_on_outfit_bottom_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Equip" to="." method="_on_equip_pressed"]
 [connection signal="pressed" from="VBoxContainer/Skill" to="." method="_on_skill_pressed"]
 [connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customize_pressed"]

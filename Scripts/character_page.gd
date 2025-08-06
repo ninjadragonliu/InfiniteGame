@@ -3,15 +3,6 @@ extends Control
 var passive_slot = 0
 var player_weapon_type_id = 0
 
-var current_hairstyle: int = 0
-var hairstyles_array : Array = []
-
-var current_outfit_top: int = 0
-var outfit_top_array : Array = []
-
-var current_outfit_bottom: int = 0
-var outfit_bottom_array : Array = []
-
 func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
 	$Equipment.show()
@@ -19,6 +10,7 @@ func _ready() -> void:
 	$Customize.hide()
 	$VBoxContainer/Equip.button_pressed = true
 	$Skill/Active.button_pressed = true
+	$Customize/Hair2.button_pressed = true
 	_ready_weapon_page()
 	$Panel/Player.text = "Player: " + Global.player_name
 	
@@ -310,6 +302,7 @@ func _on_equip_pressed() -> void:
 	$Equipment.show()
 	$Skill.hide()
 	$Customize.hide()
+	$Equipment/Weapon.show()
 	$VBoxContainer/Equip.button_pressed = true
 	$VBoxContainer/Skill.button_pressed = false
 	$VBoxContainer/Customize.button_pressed = false
@@ -328,6 +321,7 @@ func _on_customize_pressed() -> void:
 	$Equipment.hide()
 	$Skill.hide()
 	$Customize.show()
+	$Customize/Hair.show()
 	$VBoxContainer/Equip.button_pressed = false
 	$VBoxContainer/Skill.button_pressed = false
 	$VBoxContainer/Customize.button_pressed = true
@@ -392,3 +386,30 @@ func _on_active_skills_close_requested() -> void:
 func _on_active_skill_1_pressed() -> void:
 	_ready_active_page()
 	$ActiveSkills.show()
+
+
+func _on_hair_2_pressed() -> void:
+	$Customize/Hair.show()
+	$Customize/Top.hide()
+	$Customize/Bottom.hide()
+	$Customize/Hair2.button_pressed = true
+	$Customize/OutfitTop2.button_pressed = false
+	$Customize/OutfitBottom2.button_pressed = false
+
+
+func _on_outfit_top_2_pressed() -> void:
+	$Customize/Hair.hide()
+	$Customize/Top.show()
+	$Customize/Bottom.hide()
+	$Customize/Hair2.button_pressed = false
+	$Customize/OutfitTop2.button_pressed = true
+	$Customize/OutfitBottom2.button_pressed = false
+
+
+func _on_outfit_bottom_2_pressed() -> void:
+	$Customize/Hair.hide()
+	$Customize/Top.hide()
+	$Customize/Bottom.show()
+	$Customize/Hair2.button_pressed = false
+	$Customize/OutfitTop2.button_pressed = false
+	$Customize/OutfitBottom2.button_pressed = true
