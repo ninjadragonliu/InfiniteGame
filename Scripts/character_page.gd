@@ -20,10 +20,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
-	$"Panel/Current Equip/Equip 1".text = "Fist: " + Global.saving_list[0][Global.saving_list[11][0]][0]
-	$"Panel/Current Equip/Equip 2".text = "Sword: " + Global.saving_list[1][Global.saving_list[11][1]][0]
-	$"Panel/Current Equip/Equip 3".text = "Lance: " + Global.saving_list[2][Global.saving_list[11][2]][0]
-	$"Panel/Current Equip/Equip 4".text = "Top: " +  Global.saving_list[3][Global.saving_list[11][3]][0]
+	$"Panel/Current Equip/Equip 1".text = "Fist".rpad(11) + ": "+ Global.saving_list[0][Global.saving_list[11][0]][0]
+	$"Panel/Current Equip/Equip 2".text = "Sword".rpad(7) + ": "+ Global.saving_list[1][Global.saving_list[11][1]][0]
+	$"Panel/Current Equip/Equip 3".text = "Lance".rpad(8) + ": "+ Global.saving_list[2][Global.saving_list[11][2]][0]
+	$"Panel/Current Equip/Equip 4".text = "Top".rpad(10) + ": "+  Global.saving_list[3][Global.saving_list[11][3]][0]
 	$"Panel/Current Equip/Equip 5".text = "Bottom: " + Global.saving_list[4][Global.saving_list[11][4]][0]
 	
 	$"Panel/Current SKill/Active".text = "Active: " + Global.saving_list[5][Global.saving_list[11][5]][0]

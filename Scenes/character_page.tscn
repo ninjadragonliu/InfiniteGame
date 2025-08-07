@@ -160,6 +160,7 @@ theme_override_font_sizes/font_size = 20
 text = "Fist"
 
 [node name="Equip 2" type="Label" parent="Panel/Current Equip"]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 39.0
 offset_right = 381.0
@@ -168,6 +169,7 @@ theme_override_font_sizes/font_size = 20
 text = "Sword"
 
 [node name="Equip 3" type="Label" parent="Panel/Current Equip"]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 59.0
 offset_right = 381.0
