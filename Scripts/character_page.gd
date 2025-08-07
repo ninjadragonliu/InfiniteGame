@@ -277,6 +277,7 @@ func _on_equip_pressed() -> void:
 	$VBoxContainer/Equip.button_pressed = true
 	$VBoxContainer/Skill.button_pressed = false
 	$VBoxContainer/Customize.button_pressed = false
+	_on_weapon_2_pressed()
 
 func _on_skill_pressed() -> void:
 	$Equipment.hide()
@@ -296,6 +297,7 @@ func _on_customize_pressed() -> void:
 	$VBoxContainer/Equip.button_pressed = false
 	$VBoxContainer/Skill.button_pressed = false
 	$VBoxContainer/Customize.button_pressed = true
+	_on_hair_2_pressed()
 
 func _on_weapon_2_pressed() -> void:
 	$Equipment/Weapon.show()
