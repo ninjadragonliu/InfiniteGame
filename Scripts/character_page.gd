@@ -20,15 +20,15 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
-	$"Panel/Current Equip/Equip 1".text = "Fist".rpad(11) + ": "+ Global.saving_list[0][Global.saving_list[11][0]][0]
-	$"Panel/Current Equip/Equip 2".text = "Sword".rpad(7) + ": "+ Global.saving_list[1][Global.saving_list[11][1]][0]
-	$"Panel/Current Equip/Equip 3".text = "Lance".rpad(8) + ": "+ Global.saving_list[2][Global.saving_list[11][2]][0]
-	$"Panel/Current Equip/Equip 4".text = "Top".rpad(10) + ": "+  Global.saving_list[3][Global.saving_list[11][3]][0]
-	$"Panel/Current Equip/Equip 5".text = "Bottom: " + Global.saving_list[4][Global.saving_list[11][4]][0]
+	$"Panel/Current Equip/Equip 1".text = "Fist".rpad(11) + ": "+ Global.saving_list[0][Global.saving_list[10][0]][0]
+	$"Panel/Current Equip/Equip 2".text = "Sword".rpad(7) + ": "+ Global.saving_list[1][Global.saving_list[10][1]][0]
+	$"Panel/Current Equip/Equip 3".text = "Lance".rpad(8) + ": "+ Global.saving_list[2][Global.saving_list[10][2]][0]
+	$"Panel/Current Equip/Equip 4".text = "Top".rpad(10) + ": "+  Global.saving_list[3][Global.saving_list[10][3]][0]
+	$"Panel/Current Equip/Equip 5".text = "Bottom: " + Global.saving_list[4][Global.saving_list[10][4]][0]
 	
-	$"Panel/Current SKill/Active".text = "Active".rpad(11) + ": " + Global.saving_list[5][Global.saving_list[11][5]][0]
-	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.saving_list[6][Global.saving_list[11][6]][0]
-	$"Panel/Current SKill/Passive 2".text = "Passive 2: " + Global.saving_list[6][Global.saving_list[11][7]][0]
+	$"Panel/Current SKill/Active".text = "Active".rpad(11) + ": " + Global.saving_list[5][Global.saving_list[10][5]][0]
+	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.saving_list[6][Global.saving_list[10][6]][0]
+	$"Panel/Current SKill/Passive 2".text = "Passive 2: " + Global.saving_list[6][Global.saving_list[10][7]][0]
  
 func _ready_weapon_page():
 	Global.save_game_data()
@@ -183,33 +183,121 @@ func _ready_passive_page():
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			passive_skill_grid.add_child(button)
 
+func _ready_costume_hair_page():
+	Global.save_game_data()
+	var costume_hair_grid = $Customize/Hair/ScrollContainer/GridContainer
+	for child in costume_hair_grid.get_children():
+		costume_hair_grid.remove_child(child)
+		child.queue_free()
+	
+	for hair in Global.saving_list[7]:
+		if hair[2]:
+			var button = TextureButton.new()
+			# top_name => top[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+top[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +hair[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_costume_hair_icon_pressed.bind(hair[0]))
+			if hair[3] == 1:
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			costume_hair_grid.add_child(button)
+
+func _ready_costume_top_page():
+	Global.save_game_data()
+	var costume_top_grid = $Customize/Top/ScrollContainer/GridContainer
+	for child in costume_top_grid.get_children():
+		costume_top_grid.remove_child(child)
+		child.queue_free()
+	
+	for top in Global.saving_list[8]:
+		if top[2]:
+			var button = TextureButton.new()
+			# top_name => top[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+top[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +top[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_costume_top_icon_pressed.bind(top[0]))
+			if top[3] == 1:
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			costume_top_grid.add_child(button)
+
+
+func _ready_costume_bottom_page():
+	Global.save_game_data()
+	var costume_bottom_grid = $Customize/Bottom/ScrollContainer/GridContainer
+	for child in costume_bottom_grid.get_children():
+		costume_bottom_grid.remove_child(child)
+		child.queue_free()
+	
+	for bottom in Global.saving_list[9]:
+		if bottom[2]:
+			var button = TextureButton.new()
+			# top_name => top[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+top[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +bottom[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_costume_bottom_icon_pressed.bind(bottom[0]))
+			if bottom[3] == 1:
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			costume_bottom_grid.add_child(button)
+
 func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	var index = 0
 	#print("----Unequipped----")
-	#print(Global.saving_list[weapon_type_id][Global.saving_list[11][1]])
+	#print(Global.saving_list[weapon_type_id][Global.saving_list[10][1]])
 	#unequip
-	Global.saving_list[weapon_type_id][Global.saving_list[11][weapon_type_id]][3] = 0
+	Global.saving_list[weapon_type_id][Global.saving_list[10][weapon_type_id]][3] = 0
 		
 	for weapon in Global.saving_list[weapon_type_id]:
 		if weapon[0] == weapon_name:
 			weapon[3] = 1
-			Global.saving_list[11][weapon_type_id] = index
+			Global.saving_list[10][weapon_type_id] = index
 			break
 		index += 1# keep track of index
 	#print("----Equipped----")
-	#print(Global.saving_list[weapon_type_id][Global.saving_list[11][1]])
+	#print(Global.saving_list[weapon_type_id][Global.saving_list[10][1]])
 	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):
 	var index = 0
 	
 	#unequip
-	Global.saving_list[3][Global.saving_list[11][3]][3] = 0
+	Global.saving_list[3][Global.saving_list[10][3]][3] = 0
 	
 	for top in Global.saving_list[3]:
 		if top[0] == top_name:
 			top[3] = 1
-			Global.saving_list[11][3] = index
+			Global.saving_list[10][3] = index
 			break
 			
 		index += 1# keep track of index
@@ -219,12 +307,12 @@ func _on_bottom_icon_pressed(bottom_name):
 	var index = 0
 	
 	#unequip
-	Global.saving_list[4][Global.saving_list[11][4]][3] = 0
+	Global.saving_list[4][Global.saving_list[10][4]][3] = 0
 	
 	for bottom in Global.saving_list[4]:
 		if bottom[0] == bottom_name:
 			bottom[3] = 1
-			Global.saving_list[11][4] = index
+			Global.saving_list[10][4] = index
 			break
 			
 		index += 1# keep track of index
@@ -234,12 +322,12 @@ func _on_active_skill_icon_pressed(skill_name):
 	var index = 0
 	
 	#unequip
-	Global.saving_list[5][Global.saving_list[11][5]][3] = 0
+	Global.saving_list[5][Global.saving_list[10][5]][3] = 0
 	
 	for skill in Global.saving_list[5]:
 		if skill[0] == skill_name:
 			skill[3] = 1
-			Global.saving_list[11][5] = index
+			Global.saving_list[10][5] = index
 			break
 			
 		index += 1# keep track of index
@@ -251,20 +339,69 @@ func _on_passive_skill_icon_pressed(skill_name):
 	var slot = passive_slot+5 #calculate correct slot user are switching
 	
 	#unequip
-	if !(Global.saving_list[11][6] == 0 and Global.saving_list[11][7] == 0):
-		Global.saving_list[6][Global.saving_list[11][slot]][3] = 0
-	#print(Global.saving_list[6][Global.saving_list[11][slot]])
+	if !(Global.saving_list[10][6] == 0 and Global.saving_list[10][7] == 0):
+		Global.saving_list[6][Global.saving_list[10][slot]][3] = 0
+	#print(Global.saving_list[6][Global.saving_list[10][slot]])
 	
 	for skill in Global.saving_list[6]:
 		if skill[0] == skill_name:
 			skill[3] = 1
-			Global.saving_list[11][slot] = index
+			Global.saving_list[10][slot] = index
 			#print(skill)
 			break
 		
 		index += 1# keep track of index
-	#print(Global.saving_list[6][Global.saving_list[11][slot]][0])
+	#print(Global.saving_list[6][Global.saving_list[10][slot]][0])
 	_on_passive_skills_close_requested()
+
+func _on_costume_hair_icon_pressed(hair_name):
+	var index = 0
+	
+	#unequip
+	Global.saving_list[7][Global.saving_list[10][8]][3] = 0
+	
+	for hair in Global.saving_list[7]:
+		if hair[0] == hair_name:
+			hair[3] = 1
+			Global.saving_list[10][8] = index
+			break
+			
+		index += 1# keep track of index
+	#print(Global.saving_list[7][Global.saving_list[10][8]][0])
+	_ready_costume_hair_page()
+
+func _on_costume_top_icon_pressed(top_name):
+	var index = 0
+	
+	#unequip
+	Global.saving_list[8][Global.saving_list[10][9]][3] = 0
+	
+	for top in Global.saving_list[8]:
+		if top[0] == top_name:
+			top[3] = 1
+			Global.saving_list[10][9] = index
+			break
+			
+		index += 1# keep track of index
+	#print(Global.saving_list[8][Global.saving_list[10][9]][0])
+	_ready_costume_top_page()
+
+func _on_costume_bottom_icon_pressed(bottom_name):
+	var index = 0
+	
+	#unequip
+	Global.saving_list[9][Global.saving_list[10][10]][3] = 0
+	
+	for bottom in Global.saving_list[9]:
+		if bottom[0] == bottom_name:
+			bottom[3] = 1
+			Global.saving_list[10][10] = index
+			break
+			
+		index += 1# keep track of index
+	#print(Global.saving_list[9][Global.saving_list[10][10]][0])
+	_ready_costume_bottom_page()
+
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
@@ -368,6 +505,7 @@ func _on_hair_2_pressed() -> void:
 	$Customize/Hair2.button_pressed = true
 	$Customize/OutfitTop2.button_pressed = false
 	$Customize/OutfitBottom2.button_pressed = false
+	_ready_costume_hair_page()
 
 func _on_outfit_top_2_pressed() -> void:
 	$Customize/Hair.hide()
@@ -376,6 +514,7 @@ func _on_outfit_top_2_pressed() -> void:
 	$Customize/Hair2.button_pressed = false
 	$Customize/OutfitTop2.button_pressed = true
 	$Customize/OutfitBottom2.button_pressed = false
+	_ready_costume_top_page()
 
 func _on_outfit_bottom_2_pressed() -> void:
 	$Customize/Hair.hide()
@@ -384,3 +523,4 @@ func _on_outfit_bottom_2_pressed() -> void:
 	$Customize/Hair2.button_pressed = false
 	$Customize/OutfitTop2.button_pressed = false
 	$Customize/OutfitBottom2.button_pressed = true
+	_ready_costume_bottom_page()

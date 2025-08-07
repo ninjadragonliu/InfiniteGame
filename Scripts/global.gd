@@ -20,9 +20,9 @@ var max_score = 0
 var last_login_date = ""
 
 var new_attribute = true
-var gm_mode = false
+var gm_mode = true
 var money_mode = true
-var loading_mode = true
+var loading_mode = false
 #endregion
 
 #region
@@ -42,8 +42,6 @@ func _readyLists():
 		active[1] = "active"
 	for passive in passive_skill_list:
 		passive[1] = "passive"
-	for costume in costume_body_list:
-		costume[1] = "costume_body"
 	for costume in costume_hair_list:
 		costume[1] = "costume_hair"
 	for costume in costume_top_list:
@@ -51,16 +49,16 @@ func _readyLists():
 	for costume in costume_bottom_list:
 		costume[1] = "costume_bottom"
 	if gm_mode:
-		for i in range(11):
+		for i in range(10):
 			for item in saving_list[i]:
 				item[2] = true #own all items
 	#print(saving_list)
 
 func _update_for_new_items():
-	var size_tracker = [[0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0]] # will contain the items that has new attribute
+	var size_tracker = [[0], [0], [0], [0], [0], [0], [0], [0], [0], [0]] # will contain the items that has new attribute
 	var temp_list = player_current_equip
 	
-	for i in range(11):
+	for i in range(10):
 		temp_list = getLocalList_throughSavingIndex(i)
 		while saving_list[i].size() < temp_list.size(): # check if item saved < item exist
 			saving_list[i].append(temp_list[saving_list[i].size()]) # if so, add the newest item exist to saved item data list
@@ -110,14 +108,12 @@ func getLocalList_throughSavingIndex(count):
 		6:
 			return passive_skill_list
 		7:
-			return costume_body_list
-		8:
 			return costume_hair_list
-		9:
+		8:
 			return costume_top_list
-		10:
+		9:
 			return costume_bottom_list
-		11:
+		10:
 			print("Warning: Do not use getLocalList_throughSavingIdex() for getting player_current_equip, local version of it should remain unchanged")
 
 func getSavedList_throughLocalArray(array):
@@ -138,14 +134,12 @@ func getSavedList_throughLocalArray(array):
 					return saving_list[5]
 				"passive":
 					return saving_list[6]
-				"costume_body":
-					return saving_list[7]
 				"costume_hair":
-					return saving_list[8]
+					return saving_list[7]
 				"costume_top":
-					return saving_list[9]
+					return saving_list[8]
 				"costume_bottom":
-					return saving_list[10]
+					return saving_list[9]
 				_:
 					print("Error: Invalid type when using getSavedList_throughLocalArray()")
 		TYPE_INT:
@@ -155,7 +149,7 @@ func getSavedList_throughLocalArray(array):
 					Accessing_player_current_equip_List = false
 					break
 			if Accessing_player_current_equip_List:
-				return saving_list[11]
+				return saving_list[10]
 
 # [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
 # [String	, String	, Boolean	 , Int		, String		  , Int	, Boolean, Boolean		, Int]
@@ -171,12 +165,12 @@ var weapon_list_fist = [
 ]
  
 var weapon_list_sword = [
-	["Wooden Sword","", false, 1, "diamond", 1, true, false, -1],
+	["Wooden Sword","", true, 1, "", -1, false, false, -1],
 	["Soldier Sword","", false, 0, "diamond", 5, true, true, 3]
 ]
 
 var weapon_list_lance = [
-	["Wooden Lance","", false, 1, "diamond", 5, true, true, 3],
+	["Wooden Lance","", true, 1, "", -1, false, false, -1],
 	["Soldier Lance","", false, 0, "diamond", 9, true, true, 5]
 ]
  
@@ -205,11 +199,6 @@ var passive_skill_list = [
 	["MaxHP+2", "", false, 0, "coin", 300, true, false, -1]
 ]
 
-var costume_body_list = [
-	["Empty", "", true, 1, "", -1, false, false, -1],
-	["default", "", false, 0, "diamond", 10, true, false, -1]
-]
-
 var costume_hair_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1]
@@ -225,10 +214,10 @@ var costume_bottom_list = [
 	["default", "", false, 0, "diamond", 10, true, false, -1]
 ]
 
-# player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, costume_body, costume_hair, costume_top, costume_bottom]
+# player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, costume_hair, costume_top, costume_bottom]
 var player_current_equip = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list, costume_body_list, costume_hair_list, costume_top_list, costume_bottom_list, player_current_equip]
+var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list, costume_hair_list, costume_top_list, costume_bottom_list, player_current_equip]
 #endregion
 
 #region New Code Region
