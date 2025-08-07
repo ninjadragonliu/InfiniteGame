@@ -1,7 +1,6 @@
 extends Control
 
 var passive_slot = 0
-var player_weapon_type_id = 0
 
 func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
@@ -15,37 +14,25 @@ func _ready() -> void:
 	$Panel/Player.text = "Player: " + Global.player_name
 	
 	
-	#print("Saving List:")
-	#print(Global.saving_list)
 	#print("-----Current Equipment-----")
-	#print(Global.saving_list[player_weapon_type_id][Global.saving_list[11][1]][0])
-	#print(Global.saving_list[3][Global.saving_list[11][2]][0])
-	#print(Global.saving_list[5][Global.saving_list[11][4]][0])
-	#print(Global.saving_list[6][Global.saving_list[11][5]][0])
-	#print(Global.saving_list[6][Global.saving_list[11][6]][0])
+	#print(Global.saving_list)
 	#print("---------------------------")
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
-	$"Panel/Current Equip/Equip 1".text = "Weapon: " + Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[11][1]][0]
-	$"Panel/Current Equip/Equip 2".text = "Top: " +  Global.saving_list[3][Global.saving_list[11][2]][0]
-	$"Panel/Current Equip/Equip 3".text = "Bottom: " + Global.saving_list[4][Global.saving_list[11][3]][0]
+	$"Panel/Current Equip/Equip 1".text = "Fist: " + Global.saving_list[0][Global.saving_list[11][0]][0]
+	$"Panel/Current Equip/Equip 2".text = "Sword: " + Global.saving_list[1][Global.saving_list[11][1]][0]
+	$"Panel/Current Equip/Equip 3".text = "Lance: " + Global.saving_list[2][Global.saving_list[11][2]][0]
+	$"Panel/Current Equip/Equip 4".text = "Top: " +  Global.saving_list[3][Global.saving_list[11][3]][0]
+	$"Panel/Current Equip/Equip 5".text = "Bottom: " + Global.saving_list[4][Global.saving_list[11][4]][0]
 	
-	$"Panel/Current SKill/Active".text = "Active: " + Global.saving_list[5][Global.saving_list[11][4]][0]
-	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.saving_list[6][Global.saving_list[11][5]][0]
-	$"Panel/Current SKill/Passive 2".text = "Passive 2: " + Global.saving_list[6][Global.saving_list[11][6]][0]
+	$"Panel/Current SKill/Active".text = "Active: " + Global.saving_list[5][Global.saving_list[11][5]][0]
+	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.saving_list[6][Global.saving_list[11][6]][0]
+	$"Panel/Current SKill/Passive 2".text = "Passive 2: " + Global.saving_list[6][Global.saving_list[11][7]][0]
  
 func _ready_weapon_page():
 	Global.save_game_data()
 	var weapon_grid = $Equipment/Weapon/ScrollContainer/GridContainer
-	
-	match Global.saving_list[11][0]:
-		"fist":
-			player_weapon_type_id = 0
-		"sword":
-			player_weapon_type_id = 1
-		"lance":
-			player_weapon_type_id = 2
 	
 	for child in weapon_grid.get_children():
 		weapon_grid.remove_child(child)
@@ -199,32 +186,16 @@ func _ready_passive_page():
 func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	var index = 0
 	#print("----Unequipped----")
-	#print(Global.saving_list[player_weapon_type_id][Global.saving_list[11][1]])
+	#print(Global.saving_list[weapon_type_id][Global.saving_list[11][1]])
 	#unequip
-	match Global.saving_list[11][0]:
-		"fist":
-			player_weapon_type_id = 0
-		"sword":
-			player_weapon_type_id = 1
-		"lance":
-			player_weapon_type_id = 2
-	Global.saving_list[player_weapon_type_id][Global.saving_list[11][1]][3] = 0
-	
-	match weapon_type_id :
-		0:
-			Global.saving_list[11][0] = "fist"
-		1:
-			Global.saving_list[11][0] = "sword"
-		2:
-			Global.saving_list[11][0] = "lance"
+	Global.saving_list[weapon_type_id][Global.saving_list[11][weapon_type_id]][3] = 0
 		
 	for weapon in Global.saving_list[weapon_type_id]:
 		if weapon[0] == weapon_name:
 			weapon[3] = 1
-			Global.saving_list[11][1] = index
+			Global.saving_list[11][weapon_type_id] = index
 			break
 		index += 1# keep track of index
-	player_weapon_type_id = weapon_type_id
 	#print("----Equipped----")
 	#print(Global.saving_list[weapon_type_id][Global.saving_list[11][1]])
 	_ready_weapon_page()
@@ -233,12 +204,12 @@ func _on_top_icon_pressed(top_name):
 	var index = 0
 	
 	#unequip
-	Global.saving_list[3][Global.saving_list[11][2]][3] = 0
+	Global.saving_list[3][Global.saving_list[11][3]][3] = 0
 	
 	for top in Global.saving_list[3]:
 		if top[0] == top_name:
 			top[3] = 1
-			Global.saving_list[11][2] = index
+			Global.saving_list[11][3] = index
 			break
 			
 		index += 1# keep track of index
@@ -248,12 +219,12 @@ func _on_bottom_icon_pressed(bottom_name):
 	var index = 0
 	
 	#unequip
-	Global.saving_list[4][Global.saving_list[11][3]][3] = 0
+	Global.saving_list[4][Global.saving_list[11][4]][3] = 0
 	
 	for bottom in Global.saving_list[4]:
 		if bottom[0] == bottom_name:
 			bottom[3] = 1
-			Global.saving_list[11][3] = index
+			Global.saving_list[11][4] = index
 			break
 			
 		index += 1# keep track of index
@@ -263,12 +234,12 @@ func _on_active_skill_icon_pressed(skill_name):
 	var index = 0
 	
 	#unequip
-	Global.saving_list[5][Global.saving_list[11][4]][3] = 0
+	Global.saving_list[5][Global.saving_list[11][5]][3] = 0
 	
 	for skill in Global.saving_list[5]:
 		if skill[0] == skill_name:
 			skill[3] = 1
-			Global.saving_list[11][4] = index
+			Global.saving_list[11][5] = index
 			break
 			
 		index += 1# keep track of index
@@ -277,10 +248,10 @@ func _on_active_skill_icon_pressed(skill_name):
 func _on_passive_skill_icon_pressed(skill_name):
 	#print(skill_name+" skillName\n")
 	var index = 0
-	var slot = passive_slot+4 #calculate correct slot user are switching
+	var slot = passive_slot+5 #calculate correct slot user are switching
 	
 	#unequip
-	if !(Global.saving_list[11][5] == 0 and Global.saving_list[11][6] == 0):
+	if !(Global.saving_list[11][6] == 0 and Global.saving_list[11][7] == 0):
 		Global.saving_list[6][Global.saving_list[11][slot]][3] = 0
 	#print(Global.saving_list[6][Global.saving_list[11][slot]])
 	
@@ -396,7 +367,6 @@ func _on_hair_2_pressed() -> void:
 	$Customize/OutfitTop2.button_pressed = false
 	$Customize/OutfitBottom2.button_pressed = false
 
-
 func _on_outfit_top_2_pressed() -> void:
 	$Customize/Hair.hide()
 	$Customize/Top.show()
@@ -404,7 +374,6 @@ func _on_outfit_top_2_pressed() -> void:
 	$Customize/Hair2.button_pressed = false
 	$Customize/OutfitTop2.button_pressed = true
 	$Customize/OutfitBottom2.button_pressed = false
-
 
 func _on_outfit_bottom_2_pressed() -> void:
 	$Customize/Hair.hide()

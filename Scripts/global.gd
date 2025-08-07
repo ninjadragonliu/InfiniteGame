@@ -93,15 +93,6 @@ func _update_for_new_attribute(size_tracker):
 						print("Error item: " + item[0] + " undetected type data as attribute. Check update_for_new_attribute")
 			type_to_match = TYPE_NIL
 
-func get_player_weapon_type_id():
-	match Global.saving_list[11][0]:
-		"fist":
-			return 0
-		"sword":
-			return 1
-		"lance":
-			return 2
-
 func getLocalList_throughSavingIndex(count):
 	match count:
 		0:
@@ -180,12 +171,12 @@ var weapon_list_fist = [
 ]
  
 var weapon_list_sword = [
-	["Wooden Sword","", false, 0, "diamond", 1, true, false, -1],
+	["Wooden Sword","", false, 1, "diamond", 1, true, false, -1],
 	["Soldier Sword","", false, 0, "diamond", 5, true, true, 3]
 ]
 
 var weapon_list_lance = [
-	["Wooden Lance","", false, 0, "diamond", 5, true, true, 3],
+	["Wooden Lance","", false, 1, "diamond", 5, true, true, 3],
 	["Soldier Lance","", false, 0, "diamond", 9, true, true, 5]
 ]
  
@@ -234,8 +225,8 @@ var costume_bottom_list = [
 	["default", "", false, 0, "diamond", 10, true, false, -1]
 ]
 
-# player current equip only stores the index of what is equiped [weaponType, weapon, top, bottom, active, passive1, passive2, costume_body, costume_hair, costume_top, costume_bottom]
-var player_current_equip = ["fist", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, costume_body, costume_hair, costume_top, costume_bottom]
+var player_current_equip = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list, costume_body_list, costume_hair_list, costume_top_list, costume_bottom_list, player_current_equip]
 #endregion
