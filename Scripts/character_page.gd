@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	$"Panel/Current Equip/Equip 4".text = "Top".rpad(10) + ": "+  Global.saving_list[3][Global.saving_list[11][3]][0]
 	$"Panel/Current Equip/Equip 5".text = "Bottom: " + Global.saving_list[4][Global.saving_list[11][4]][0]
 	
-	$"Panel/Current SKill/Active".text = "Active: " + Global.saving_list[5][Global.saving_list[11][5]][0]
+	$"Panel/Current SKill/Active".text = "Active".rpad(11) + ": " + Global.saving_list[5][Global.saving_list[11][5]][0]
 	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.saving_list[6][Global.saving_list[11][6]][0]
 	$"Panel/Current SKill/Passive 2".text = "Passive 2: " + Global.saving_list[6][Global.saving_list[11][7]][0]
  
