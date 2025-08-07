@@ -20,7 +20,7 @@ var max_score = 0
 var last_login_date = ""
 
 var new_attribute = true
-var gm_mode = true
+var gm_mode = false
 var money_mode = true
 var loading_mode = false
 #endregion

@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://bxnto03l5mjxr"]
+[gd_scene load_steps=33 format=3 uid="uid://bxnto03l5mjxr"]
 
 [ext_resource type="Script" uid="uid://bsplvgh7yjodf" path="res://Scripts/character_page.gd" id="1_xkdtw"]
+[ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_2psqf"]
 [ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="2_a33jj"]
 [ext_resource type="Texture2D" uid="uid://c6esf6htp0x8o" path="res://Assets/1293 - Icon.png" id="3_7h2jp"]
 [ext_resource type="Texture2D" uid="uid://bp6in66f85tf0" path="res://Assets/1294 - Icon.png" id="4_hxf2x"]
@@ -122,6 +123,9 @@ offset_bottom = 157.688
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_xkdtw")
+
+[node name="Player2" parent="Panel/TextureRect" instance=ExtResource("2_2psqf")]
+position = Vector2(185, 136)
 
 [node name="Player" type="Label" parent="Panel"]
 layout_mode = 2
