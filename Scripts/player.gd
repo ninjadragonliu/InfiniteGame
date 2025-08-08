@@ -75,26 +75,42 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		take_damaged.emit()
 
-func change_weapon():
+func update_animation():
+	for costume_part in range(9,12):
+		var part_path
+		
+		print(costume_part)
+		match costume_part:
+			9:
+#				part_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[]
+				pass
+			10:
+				pass
+			11:
+				pass
+		
+#	var character_resource_path = load("res://Assets/Animation/MainCharacter/"
+#	+whatever the costumes are named [folder]+"/"
 #	for i in range(4):
 #		match i:
 #			0:
 #				pass
 	
-	var character_resource_path = load("res://Assets/Animation/MainCharacter/"
-	#+whatever the costumes are named [folder]+"/"
-	+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[11][1]][0]+".png")
+#	var character_resource_path = load("res://Assets/Animation/MainCharacter/"
+#	#+whatever the costumes are named [folder]+"/"
+#	+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[11][1]][0]+".png")
+#	
+#	var weapon_resource_path  = load("res://Assets/Animation/MainCharacter/"
+#	+"weapon_and_effect/"
+#	+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[11][1]][0]+".png")
 	
-	var weapon_resource_path  = load("res://Assets/Animation/MainCharacter/"
-	+"weapon_and_effect/"
-	+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[11][1]][0]+".png")
-	
-	$Body_atk.texture = character_resource_path
-	$Pants_atk.texture = character_resource_path
-	$Clothe_atk.texture = character_resource_path
-	$Hair_atk.texture = character_resource_path
-	$Weapon_atk.texture = weapon_resource_path
-	$Effect_atk.texture = weapon_resource_path
+#	$Body_atk.texture = character_resource_path
+#	$Pants_atk.texture = character_resource_path
+#	$Clothe_atk.texture = character_resource_path
+#	$Hair_atk.texture = character_resource_path
+#	$Weapon_atk.texture = weapon_resource_path
+#	$Effect_atk.texture = weapon_resource_path
+	pass
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	left_button.disabled = true

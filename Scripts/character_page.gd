@@ -184,11 +184,11 @@ func _ready_passive_page():
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			passive_skill_grid.add_child(button)
 
-func _ready_custome_hair_page():
+func _ready_costume_hair_page():
 	Global.save_game_data()
-	var custome_hair_grid = $Customize/Hair/ScrollContainer/GridContainer
-	for child in custome_hair_grid.get_children():
-		custome_hair_grid.remove_child(child)
+	var costume_hair_grid = $Customize/Hair/ScrollContainer/GridContainer
+	for child in costume_hair_grid.get_children():
+		costume_hair_grid.remove_child(child)
 		child.queue_free()
 	
 	for hair in Global.saving_list[7]:
@@ -207,17 +207,17 @@ func _ready_custome_hair_page():
 			button.stretch_mode = 0
 			button.custom_minimum_size = Vector2(100,100)
 			
-			button.connect("pressed", _on_custome_hair_icon_pressed.bind(hair[0]))
+			button.connect("pressed", _on_costume_hair_icon_pressed.bind(hair[0]))
 			if hair[3] == 1:
 				button.texture_disabled = load("res://Assets/testing_disabled.png")
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
-			custome_hair_grid.add_child(button)
+			costume_hair_grid.add_child(button)
 
-func _ready_custome_top_page():
+func _ready_costume_top_page():
 	Global.save_game_data()
-	var custome_top_grid = $Customize/Top/ScrollContainer/GridContainer
-	for child in custome_top_grid.get_children():
-		custome_top_grid.remove_child(child)
+	var costume_top_grid = $Customize/Top/ScrollContainer/GridContainer
+	for child in costume_top_grid.get_children():
+		costume_top_grid.remove_child(child)
 		child.queue_free()
 	
 	for top in Global.saving_list[8]:
@@ -236,18 +236,18 @@ func _ready_custome_top_page():
 			button.stretch_mode = 0
 			button.custom_minimum_size = Vector2(100,100)
 			
-			button.connect("pressed", _on_custome_top_icon_pressed.bind(top[0]))
+			button.connect("pressed", _on_costume_top_icon_pressed.bind(top[0]))
 			if top[3] == 1:
 				button.texture_disabled = load("res://Assets/testing_disabled.png")
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
-			custome_top_grid.add_child(button)
+			costume_top_grid.add_child(button)
 
 
-func _ready_custome_bottom_page():
+func _ready_costume_bottom_page():
 	Global.save_game_data()
-	var custome_bottom_grid = $Customize/Bottom/ScrollContainer/GridContainer
-	for child in custome_bottom_grid.get_children():
-		custome_bottom_grid.remove_child(child)
+	var costume_bottom_grid = $Customize/Bottom/ScrollContainer/GridContainer
+	for child in costume_bottom_grid.get_children():
+		costume_bottom_grid.remove_child(child)
 		child.queue_free()
 	
 	for bottom in Global.saving_list[9]:
@@ -266,11 +266,11 @@ func _ready_custome_bottom_page():
 			button.stretch_mode = 0
 			button.custom_minimum_size = Vector2(100,100)
 			
-			button.connect("pressed", _on_custome_bottom_icon_pressed.bind(bottom[0]))
+			button.connect("pressed", _on_costume_bottom_icon_pressed.bind(bottom[0]))
 			if bottom[3] == 1:
 				button.texture_disabled = load("res://Assets/testing_disabled.png")
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
-			custome_bottom_grid.add_child(button)
+			costume_bottom_grid.add_child(button)
 
 func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	var index = 0
@@ -355,7 +355,7 @@ func _on_passive_skill_icon_pressed(skill_name):
 	#print(Global.saving_list[6][Global.saving_list[10][slot]][0])
 	_on_passive_skills_close_requested()
 
-func _on_custome_hair_icon_pressed(hair_name):
+func _on_costume_hair_icon_pressed(hair_name):
 	var index = 0
 	
 	#unequip
@@ -369,9 +369,9 @@ func _on_custome_hair_icon_pressed(hair_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[7][Global.saving_list[10][8]][0])
-	_ready_custome_hair_page()
+	_ready_costume_hair_page()
 
-func _on_custome_top_icon_pressed(top_name):
+func _on_costume_top_icon_pressed(top_name):
 	var index = 0
 	
 	#unequip
@@ -385,9 +385,9 @@ func _on_custome_top_icon_pressed(top_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[8][Global.saving_list[10][9]][0])
-	_ready_custome_top_page()
+	_ready_costume_top_page()
 
-func _on_custome_bottom_icon_pressed(bottom_name):
+func _on_costume_bottom_icon_pressed(bottom_name):
 	var index = 0
 	
 	#unequip
@@ -401,7 +401,7 @@ func _on_custome_bottom_icon_pressed(bottom_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[9][Global.saving_list[10][10]][0])
-	_ready_custome_bottom_page()
+	_ready_costume_bottom_page()
 
 
 func _on_back_pressed() -> void:
@@ -498,7 +498,6 @@ func _on_active_skill_1_pressed() -> void:
 	_ready_active_page()
 	$ActiveSkills.show()
 
-
 func _on_hair_2_pressed() -> void:
 	$Customize/Hair.show()
 	$Customize/Top.hide()
@@ -506,7 +505,7 @@ func _on_hair_2_pressed() -> void:
 	$Customize/Hair2.button_pressed = true
 	$Customize/OutfitTop2.button_pressed = false
 	$Customize/OutfitBottom2.button_pressed = false
-	_ready_custome_hair_page()
+	_ready_costume_hair_page()
 
 func _on_outfit_top_2_pressed() -> void:
 	$Customize/Hair.hide()
@@ -515,7 +514,7 @@ func _on_outfit_top_2_pressed() -> void:
 	$Customize/Hair2.button_pressed = false
 	$Customize/OutfitTop2.button_pressed = true
 	$Customize/OutfitBottom2.button_pressed = false
-	_ready_custome_top_page()
+	_ready_costume_top_page()
 
 func _on_outfit_bottom_2_pressed() -> void:
 	$Customize/Hair.hide()
@@ -524,4 +523,4 @@ func _on_outfit_bottom_2_pressed() -> void:
 	$Customize/Hair2.button_pressed = false
 	$Customize/OutfitTop2.button_pressed = false
 	$Customize/OutfitBottom2.button_pressed = true
-	_ready_custome_bottom_page()
+	_ready_costume_bottom_page()

@@ -42,12 +42,12 @@ func _readyLists():
 		active[1] = "active"
 	for passive in passive_skill_list:
 		passive[1] = "passive"
-	for custome in custome_hair_list:
-		custome[1] = "custome_hair"
-	for custome in custome_top_list:
-		custome[1] = "custome_top"
-	for custome in custome_bottom_list:
-		custome[1] = "custome_bottom"
+	for costume in costume_hair_list:
+		costume[1] = "costume_hair"
+	for costume in costume_top_list:
+		costume[1] = "costume_top"
+	for costume in costume_bottom_list:
+		costume[1] = "costume_bottom"
 	if gm_mode:
 		for i in range(10):
 			for item in saving_list[i]:
@@ -108,11 +108,11 @@ func getLocalList_throughSavingIndex(count):
 		6:
 			return passive_skill_list
 		7:
-			return custome_hair_list
+			return costume_hair_list
 		8:
-			return custome_top_list
+			return costume_top_list
 		9:
-			return custome_bottom_list
+			return costume_bottom_list
 		10:
 			print("Warning: Do not use getLocalList_throughSavingIdex() for getting player_current_equip, local version of it should remain unchanged")
 
@@ -134,11 +134,11 @@ func getSavedList_throughLocalArray(array):
 					return saving_list[5]
 				"passive":
 					return saving_list[6]
-				"custome_hair":
+				"costume_hair":
 					return saving_list[7]
-				"custome_top":
+				"costume_top":
 					return saving_list[8]
-				"custome_bottom":
+				"costume_bottom":
 					return saving_list[9]
 				_:
 					print("Error: Invalid type when using getSavedList_throughLocalArray()")
@@ -199,28 +199,28 @@ var passive_skill_list = [
 	["MaxHP+2", "", false, 0, "coin", 300, true, false, -1]
 ]
 
-var custome_hair_list = [
+var costume_hair_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
 	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
-var custome_top_list = [
+var costume_top_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
 	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
-var custome_bottom_list = [
+var costume_bottom_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
 	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
-# player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, custome_hair, custome_top, custome_bottom]
-var player_current_equip = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, costume_hair, costume_top, costume_bottom]
+var player_current_equip = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list, custome_hair_list, custome_top_list, custome_bottom_list, player_current_equip]
+var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list, costume_hair_list, costume_top_list, costume_bottom_list, player_current_equip]
 #endregion
 
 #region New Code Region
@@ -255,7 +255,7 @@ var was_data_loaded = false
 # reference weapon list in 1st code region
 #region New Code Region shoppable items
 # value = 1 - not sold, 0 is sold, -1 - unlimited value
-var shop_customes = [] # 3 types
+var shop_costumes = [] # 3 types
 var shop_skills = [] # 2 types
 var shop_featured = [] # too many types
 var coin_object = objectCreation.objectCreation("coins_110", "currency", -1)
