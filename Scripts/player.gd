@@ -12,7 +12,7 @@ static var damage_resistance : int = 0
 
 
 func _ready():
-	change_weapon()
+	#change_weapon()
 	left_button = get_tree().current_scene.get_node("Left")
 	right_button = get_tree().current_scene.get_node("Right")
 

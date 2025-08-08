@@ -195,7 +195,7 @@ func _ready_custome_hair_page():
 		if hair[2]:
 			var button = TextureButton.new()
 			# top_name => top[0]
-			var icon_path = "res://Assets/testing.png" # testing use code
+			var icon_path = "res://Assets/1.png" # testing use code
 			#var icon_path = "res://Assets/"+top[0]+".png"
 			
 			if ResourceLoader.exists(icon_path):
@@ -224,7 +224,7 @@ func _ready_custome_top_page():
 		if top[2]:
 			var button = TextureButton.new()
 			# top_name => top[0]
-			var icon_path = "res://Assets/testing.png" # testing use code
+			var icon_path = "res://Assets/1.png" # testing use code
 			#var icon_path = "res://Assets/"+top[0]+".png"
 			
 			if ResourceLoader.exists(icon_path):
@@ -254,7 +254,7 @@ func _ready_custome_bottom_page():
 		if bottom[2]:
 			var button = TextureButton.new()
 			# top_name => top[0]
-			var icon_path = "res://Assets/testing.png" # testing use code
+			var icon_path = "res://Assets/1.png" # testing use code
 			#var icon_path = "res://Assets/"+top[0]+".png"
 			
 			if ResourceLoader.exists(icon_path):

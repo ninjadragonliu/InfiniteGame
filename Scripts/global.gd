@@ -20,9 +20,9 @@ var max_score = 0
 var last_login_date = ""
 
 var new_attribute = true
-var gm_mode = false
+var gm_mode = true
 var money_mode = true
-var loading_mode = false
+var loading_mode = true
 #endregion
 
 #region
@@ -201,17 +201,20 @@ var passive_skill_list = [
 
 var custome_hair_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
-	["default", "", false, 0, "diamond", 10, true, false, -1]
+	["default", "", false, 0, "diamond", 10, true, false, -1],
+	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 var custome_top_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
-	["default", "", false, 0, "diamond", 10, true, false, -1]
+	["default", "", false, 0, "diamond", 10, true, false, -1],
+	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 var custome_bottom_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
-	["default", "", false, 0, "diamond", 10, true, false, -1]
+	["default", "", false, 0, "diamond", 10, true, false, -1],
+	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 # player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, custome_hair, custome_top, custome_bottom]
