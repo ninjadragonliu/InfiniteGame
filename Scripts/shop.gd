@@ -45,7 +45,7 @@ func _ready_shop_feature_page():
 		shop_feature_grid.remove_child(child)
 		child.queue_free()
 	
-	for i in range(11):
+	for i in range(10):
 		for item in Global.saving_list[i]:
 			if item[7] == true:
 				var itemSlot = store_item_scene.instantiate()
