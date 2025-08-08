@@ -119,11 +119,11 @@ func _on_buy_pressed(i, item, isFeaturePage = false) -> void:
 				_on_active_pressed()
 			6:
 				_on_passive_pressed()
-			8:
+			7:
 				_on_hair_pressed()
-			9:
+			8:
 				_on_costop_pressed()
-			10:
+			9:
 				_on_cosbottom_pressed()
 			_:
 				print("Unable to find what page of shop to jump to after purchase in shop: "+item[0])
@@ -215,6 +215,41 @@ func _on_hair_pressed() -> void:
 		if child.name.begins_with("Equipment"):
 			continue
 		child.button_pressed = false
+	
+	var shop_costume_hair_grid = $Costume/Hair/ScrollContainer/GridContainer
+	
+	for child in shop_costume_hair_grid.get_children():
+		shop_costume_hair_grid.remove_child(child)
+		child.queue_free()
+	
+	for item in Global.saving_list[7]:
+		if item[6] == true:
+			var itemSlot = store_item_scene.instantiate()
+			var textureRect_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+item[0]+".png"
+			
+			if ResourceLoader.exists(textureRect_path):
+				itemSlot.get_node("itemName").text = item[0]
+				itemSlot.get_node("TextureRect").texture = load(textureRect_path)
+				
+				#.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +item[0]+ " not found man, try check the asset")
+			
+			#var icon_path = "res://Assets/"+item[0]+".png"
+			var icon_path = "res://Assets/stars.png"
+			itemSlot.get_node("Buy").icon = load(icon_path)
+			
+			#if item[7]:
+			#	itemSlot.get_node("Buy").text = str(int(item[8]))
+			#elif item[6]:
+			itemSlot.get_node("Buy").text = str(int(item[5]))
+			
+			itemSlot.get_node("Buy").connect("pressed", _on_buy_pressed.bind(7, item))
+			if item[2] == true:
+				itemSlot.get_node("Buy").disabled = true
+				itemSlot.get_node("Buy").text = "Bought"
+			shop_costume_hair_grid.add_child(itemSlot)
 
 func _on_costop_pressed() -> void:
 	$Costume.show()
@@ -248,6 +283,41 @@ func _on_costop_pressed() -> void:
 		if child.name.begins_with("Equipment"):
 			continue
 		child.button_pressed = false
+	
+	var shop_costume_top_grid = $Costume/Top/ScrollContainer/GridContainer
+	
+	for child in shop_costume_top_grid.get_children():
+		shop_costume_top_grid.remove_child(child)
+		child.queue_free()
+	
+	for item in Global.saving_list[8]:
+		if item[6] == true:
+			var itemSlot = store_item_scene.instantiate()
+			var textureRect_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+item[0]+".png"
+			
+			if ResourceLoader.exists(textureRect_path):
+				itemSlot.get_node("itemName").text = item[0]
+				itemSlot.get_node("TextureRect").texture = load(textureRect_path)
+				
+				#.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +item[0]+ " not found man, try check the asset")
+			
+			#var icon_path = "res://Assets/"+item[0]+".png"
+			var icon_path = "res://Assets/stars.png"
+			itemSlot.get_node("Buy").icon = load(icon_path)
+			
+			#if item[7]:
+			#	itemSlot.get_node("Buy").text = str(int(item[8]))
+			#elif item[6]:
+			itemSlot.get_node("Buy").text = str(int(item[5]))
+			
+			itemSlot.get_node("Buy").connect("pressed", _on_buy_pressed.bind(8, item))
+			if item[2] == true:
+				itemSlot.get_node("Buy").disabled = true
+				itemSlot.get_node("Buy").text = "Bought"
+			shop_costume_top_grid.add_child(itemSlot)
 
 func _on_cosbottom_pressed() -> void:
 	$Costume.show()
@@ -281,6 +351,41 @@ func _on_cosbottom_pressed() -> void:
 		if child.name.begins_with("Equipment"):
 			continue
 		child.button_pressed = false
+	
+	var shop_costume_bottom_grid = $Costume/Bottom/ScrollContainer/GridContainer
+	
+	for child in shop_costume_bottom_grid.get_children():
+		shop_costume_bottom_grid.remove_child(child)
+		child.queue_free()
+	
+	for item in Global.saving_list[9]:
+		if item[6] == true:
+			var itemSlot = store_item_scene.instantiate()
+			var textureRect_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+item[0]+".png"
+			
+			if ResourceLoader.exists(textureRect_path):
+				itemSlot.get_node("itemName").text = item[0]
+				itemSlot.get_node("TextureRect").texture = load(textureRect_path)
+				
+				#.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +item[0]+ " not found man, try check the asset")
+			
+			#var icon_path = "res://Assets/"+item[0]+".png"
+			var icon_path = "res://Assets/stars.png"
+			itemSlot.get_node("Buy").icon = load(icon_path)
+			
+			#if item[7]:
+			#	itemSlot.get_node("Buy").text = str(int(item[8]))
+			#elif item[6]:
+			itemSlot.get_node("Buy").text = str(int(item[5]))
+			
+			itemSlot.get_node("Buy").connect("pressed", _on_buy_pressed.bind(9, item))
+			if item[2] == true:
+				itemSlot.get_node("Buy").disabled = true
+				itemSlot.get_node("Buy").text = "Bought"
+			shop_costume_bottom_grid.add_child(itemSlot)
 
 func _on_active_pressed() -> void: # active skills
 	$Skills.show()
