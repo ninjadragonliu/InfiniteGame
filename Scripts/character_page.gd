@@ -1,5 +1,9 @@
 extends Control
 
+@onready var player = get_tree().get_nodes_in_group("player")[0]
+@onready var player_hair = player.get_node("Hair_atk")
+@onready var player_shirt = player.get_node("Clothe_atk")
+@onready var player_pants = player.get_node("Pants_atk")
 
 var passive_slot = 0
 
@@ -224,7 +228,7 @@ func _ready_costume_top_page():
 		if top[2]:
 			var button = TextureButton.new()
 			# top_name => top[0]
-			var icon_path = "res://Assets/1.png" # testing use code
+			var icon_path = "res://Assets/3.png" # testing use code
 			#var icon_path = "res://Assets/"+top[0]+".png"
 			
 			if ResourceLoader.exists(icon_path):
@@ -254,7 +258,7 @@ func _ready_costume_bottom_page():
 		if bottom[2]:
 			var button = TextureButton.new()
 			# top_name => top[0]
-			var icon_path = "res://Assets/1.png" # testing use code
+			var icon_path = "res://Assets/5.png" # testing use code
 			#var icon_path = "res://Assets/"+top[0]+".png"
 			
 			if ResourceLoader.exists(icon_path):
@@ -369,6 +373,7 @@ func _on_costume_hair_icon_pressed(hair_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[7][Global.saving_list[10][8]][0])
+	player_hair.texture = load("res://Assets/1.png") # hard coding setting the texture of the hair
 	_ready_costume_hair_page()
 
 func _on_costume_top_icon_pressed(top_name):
@@ -385,6 +390,7 @@ func _on_costume_top_icon_pressed(top_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[8][Global.saving_list[10][9]][0])
+	player_shirt.texture = load("res://Assets/1.png") # hard coding setting the texture of the shirt
 	_ready_costume_top_page()
 
 func _on_costume_bottom_icon_pressed(bottom_name):
@@ -401,6 +407,7 @@ func _on_costume_bottom_icon_pressed(bottom_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[9][Global.saving_list[10][10]][0])
+	player_pants.texture = load("res://Assets/5.png") # hard coding setting the texture of the pants
 	_ready_costume_bottom_page()
 
 

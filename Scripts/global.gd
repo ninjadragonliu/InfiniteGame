@@ -22,7 +22,7 @@ var last_login_date = ""
 var new_attribute = true
 var gm_mode = true
 var money_mode = true
-var loading_mode = true
+var loading_mode = false
 #endregion
 
 #region
@@ -208,13 +208,13 @@ var costume_hair_list = [
 var costume_top_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
-	["1", "", false, 0, "diamond", 20, true, false, -1]
+	["3", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 var costume_bottom_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
-	["1", "", false, 0, "diamond", 20, true, false, -1]
+	["5", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 # player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, costume_hair, costume_top, costume_bottom]
