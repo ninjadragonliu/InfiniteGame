@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwscopb7kub4f"
-path="res://.godot/imported/lance.png-a834f6cafeeb99e8a318a4ceed77da00.ctex"
+uid="uid://b6labt2svvkj6"
+path="res://.godot/imported/Lance.png-1968eede76944a570cfc6f839ad94127.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/default/lance.png"
-dest_files=["res://.godot/imported/lance.png-a834f6cafeeb99e8a318a4ceed77da00.ctex"]
+source_file="res://Assets/Animation/MainCharacter/default/Lance.png"
+dest_files=["res://.godot/imported/Lance.png-1968eede76944a570cfc6f839ad94127.ctex"]
 
 [params]
 

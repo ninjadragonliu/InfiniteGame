@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ppv7l7h25wp0"
-path="res://.godot/imported/Wooden Lance.png-e9e2269b63427c882fc9c7578ae14264.ctex"
+uid="uid://b2i4r7o3brml"
+path="res://.godot/imported/Punch_Fx.png-b793ef4bf228e69b651dc67f8dc6f672.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/Wooden Lance.png"
-dest_files=["res://.godot/imported/Wooden Lance.png-e9e2269b63427c882fc9c7578ae14264.ctex"]
+source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Punch_Fx.png"
+dest_files=["res://.godot/imported/Punch_Fx.png-b793ef4bf228e69b651dc67f8dc6f672.ctex"]
 
 [params]
 

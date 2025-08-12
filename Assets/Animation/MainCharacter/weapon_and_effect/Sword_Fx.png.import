@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3md1tt3703sd"
-path="res://.godot/imported/Wooden Sword.png-d506d08871abe3630edf59b54d36ba39.ctex"
+uid="uid://c2wddqebfpg84"
+path="res://.godot/imported/Sword_Fx.png-95065b2f5cd9c6e21150a25874d45e67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/Wooden Sword.png"
-dest_files=["res://.godot/imported/Wooden Sword.png-d506d08871abe3630edf59b54d36ba39.ctex"]
+source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Sword_Fx.png"
+dest_files=["res://.godot/imported/Sword_Fx.png-95065b2f5cd9c6e21150a25874d45e67.ctex"]
 
 [params]
 
