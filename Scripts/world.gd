@@ -26,6 +26,9 @@ func _ready() -> void:
 
 	timer.timeout.connect(enemies.spawn_enemy)
 	
+	if Global.active_skill_list[Global.saving_list[10][5]][0] == "Empty":
+		$Skills.hide()
+	
 func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/" + str(Global.max_health)
 	#$EnemiesRemaining/Label.text = str(enemies_remaining)
