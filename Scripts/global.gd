@@ -20,7 +20,7 @@ var max_score = 0
 var last_login_date = ""
 
 var new_attribute = true
-var gm_mode = false
+var gm_mode = true
 var money_mode = true
 var loading_mode = false
 #endregion
@@ -202,18 +202,21 @@ var passive_skill_list = [
 var costume_hair_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
+	["paladin", "", false, 0, "diamond", 10, true, false, -1],
 	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 var costume_top_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
+	["paladin", "", false, 0, "diamond", 10, true, false, -1],
 	["3", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 var costume_bottom_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["default", "", false, 0, "diamond", 10, true, false, -1],
+	["paladin", "", false, 0, "diamond", 10, true, false, -1],
 	["5", "", false, 0, "diamond", 20, true, false, -1]
 ]
 

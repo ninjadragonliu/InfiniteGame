@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdo2sq66c8h6h"
-path="res://.godot/imported/Lance_Fx.png-f67a6bd47dac3360820497667f45a439.ctex"
+uid="uid://bn3syjytemlyc"
+path="res://.godot/imported/Lance.png-9ac585ef755f9004de19cf0cb8e94d61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Lance_Fx.png"
-dest_files=["res://.godot/imported/Lance_Fx.png-f67a6bd47dac3360820497667f45a439.ctex"]
+source_file="res://Assets/Animation/MainCharacter/paladin/Lance.png"
+dest_files=["res://.godot/imported/Lance.png-9ac585ef755f9004de19cf0cb8e94d61.ctex"]
 
 [params]
 

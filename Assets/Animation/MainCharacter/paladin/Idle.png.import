@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2i4r7o3brml"
-path="res://.godot/imported/Punch_Fx.png-b793ef4bf228e69b651dc67f8dc6f672.ctex"
+uid="uid://cweboinfibp5f"
+path="res://.godot/imported/Idle.png-e3b1e7de9a75225c8da347f169ec0490.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Punch_Fx.png"
-dest_files=["res://.godot/imported/Punch_Fx.png-b793ef4bf228e69b651dc67f8dc6f672.ctex"]
+source_file="res://Assets/Animation/MainCharacter/paladin/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-e3b1e7de9a75225c8da347f169ec0490.ctex"]
 
 [params]
 

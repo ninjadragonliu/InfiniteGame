@@ -291,6 +291,7 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 		index += 1# keep track of index
 	#print("----Equipped----")
 	#print(Global.saving_list[weapon_type_id][Global.saving_list[10][1]])
+	player.update_animation(weapon_type_id)
 	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):
@@ -373,7 +374,8 @@ func _on_costume_hair_icon_pressed(hair_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[7][Global.saving_list[10][8]][0])
-	player_hair.texture = load("res://Assets/1.png") # hard coding setting the texture of the hair
+	#player_hair.texture = load("res://Assets/1.png") # hard coding setting the texture of the hair
+	player.update_animation()
 	_ready_costume_hair_page()
 
 func _on_costume_top_icon_pressed(top_name):
@@ -390,7 +392,8 @@ func _on_costume_top_icon_pressed(top_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[8][Global.saving_list[10][9]][0])
-	player_shirt.texture = load("res://Assets/1.png") # hard coding setting the texture of the shirt
+	#player_shirt.texture = load("res://Assets/1.png") # hard coding setting the texture of the shirt
+	player.update_animation()
 	_ready_costume_top_page()
 
 func _on_costume_bottom_icon_pressed(bottom_name):
@@ -407,7 +410,8 @@ func _on_costume_bottom_icon_pressed(bottom_name):
 			
 		index += 1# keep track of index
 	#print(Global.saving_list[9][Global.saving_list[10][10]][0])
-	player_pants.texture = load("res://Assets/5.png") # hard coding setting the texture of the pants
+	#player_pants.texture = load("res://Assets/5.png") # hard coding setting the texture of the pants
+	player.update_animation()
 	_ready_costume_bottom_page()
 
 

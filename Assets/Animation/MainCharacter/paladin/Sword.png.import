@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2wddqebfpg84"
-path="res://.godot/imported/Sword_Fx.png-95065b2f5cd9c6e21150a25874d45e67.ctex"
+uid="uid://bwytsvswf6c4m"
+path="res://.godot/imported/Sword.png-c540c9195c032b27849b1361511c2d48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Sword_Fx.png"
-dest_files=["res://.godot/imported/Sword_Fx.png-95065b2f5cd9c6e21150a25874d45e67.ctex"]
+source_file="res://Assets/Animation/MainCharacter/paladin/Sword.png"
+dest_files=["res://.godot/imported/Sword.png-c540c9195c032b27849b1361511c2d48.ctex"]
 
 [params]
 

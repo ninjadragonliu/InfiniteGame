@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dulcn8pcthbs6"
-path="res://.godot/imported/Idle_Lance.png-7524d45f3d0e9d9cdafeed7b4b0f7ce7.ctex"
+uid="uid://bm17n4mwr8035"
+path="res://.godot/imported/Idle_Bare_Fist.png-3c21ab41878f511cf45d2456fd040e38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Lance.png"
-dest_files=["res://.godot/imported/Idle_Lance.png-7524d45f3d0e9d9cdafeed7b4b0f7ce7.ctex"]
+source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Bare_Fist.png"
+dest_files=["res://.godot/imported/Idle_Bare_Fist.png-3c21ab41878f511cf45d2456fd040e38.ctex"]
 
 [params]
 
