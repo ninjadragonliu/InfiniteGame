@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgbd8dgd1ug5c"]
+[gd_scene load_steps=12 format=3 uid="uid://bgbd8dgd1ug5c"]
 
 [ext_resource type="Script" uid="uid://t4cr3dwvl4u1" path="res://Scripts/player.gd" id="1_u63mc"]
-[ext_resource type="Texture2D" uid="uid://cco5bprb75yn1" path="res://Assets/Animation/MainCharacter/Bare Fist.png" id="2_bms3g"]
+[ext_resource type="Texture2D" uid="uid://dtl15qgrjjo3s" path="res://Assets/Animation/MainCharacter/default/Fist.png" id="2_hqdnm"]
+[ext_resource type="Texture2D" uid="uid://ds34msy0ph876" path="res://Assets/Animation/MainCharacter/default/Idle.png" id="2_me0cc"]
+[ext_resource type="Texture2D" uid="uid://bm17n4mwr8035" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Bare_Fist.png" id="3_2wrp4"]
+[ext_resource type="Texture2D" uid="uid://b2i4r7o3brml" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Bare_Fist.png" id="4_46y3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(111, 165)
@@ -273,7 +276,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Body_atk:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -281,7 +284,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -345,7 +348,7 @@ tracks/6/keys = {
 }
 tracks/7/type = "value"
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/path = NodePath("Pants_atk:flip_h")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
@@ -353,11 +356,11 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
-tracks/8/enabled = true
+tracks/8/enabled = false
 tracks/8/path = NodePath("Clothe_atk:flip_h")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
@@ -365,11 +368,11 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
-tracks/9/enabled = true
+tracks/9/enabled = false
 tracks/9/path = NodePath("Hair_atk:flip_h")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
@@ -377,11 +380,11 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
-tracks/10/enabled = true
+tracks/10/enabled = false
 tracks/10/path = NodePath("Weapon_atk:flip_h")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
@@ -405,60 +408,60 @@ script = ExtResource("1_u63mc")
 [node name="Body_atk" type="Sprite2D" parent="."]
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_hqdnm")
 flip_h = true
 hframes = 10
-vframes = 5
+vframes = 4
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Pants_atk" type="Sprite2D" parent="."]
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_hqdnm")
 flip_h = true
 hframes = 10
-vframes = 5
+vframes = 4
 frame = 10
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Clothe_atk" type="Sprite2D" parent="."]
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_hqdnm")
 flip_h = true
 hframes = 10
-vframes = 5
+vframes = 4
 frame = 20
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Hair_atk" type="Sprite2D" parent="."]
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_hqdnm")
 flip_h = true
 hframes = 10
-vframes = 5
+vframes = 4
 frame = 30
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Weapon_atk" type="Sprite2D" parent="."]
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("3_2wrp4")
 flip_h = true
 hframes = 10
-vframes = 5
-frame = 40
+vframes = 3
+frame = 10
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Effect_atk" type="Sprite2D" parent="."]
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("4_46y3y")
 flip_h = true
 hframes = 10
-vframes = 5
-frame = 40
+vframes = 3
+frame = 20
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -482,54 +485,52 @@ speed_scale = 0.5
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_me0cc")
 flip_h = true
-hframes = 10
-vframes = 5
+hframes = 7
+vframes = 4
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Pants_idle" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_me0cc")
 flip_h = true
-hframes = 10
-vframes = 5
-frame = 10
+hframes = 7
+vframes = 4
+frame = 7
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Clothe_idle" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_me0cc")
 flip_h = true
-hframes = 10
-vframes = 5
-frame = 20
+hframes = 7
+vframes = 4
+frame = 14
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Hair_idle" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("2_me0cc")
 flip_h = true
-hframes = 10
-vframes = 5
-frame = 30
+hframes = 7
+vframes = 4
+frame = 21
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Weapon_idle" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_bms3g")
+texture = ExtResource("3_2wrp4")
 flip_h = true
-hframes = 10
-vframes = 5
-frame = 40
+hframes = 7
 region_rect = Rect2(0, 0, 600, 210)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
