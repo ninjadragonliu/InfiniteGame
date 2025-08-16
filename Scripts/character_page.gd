@@ -292,6 +292,8 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	#print("----Equipped----")
 	#print(Global.saving_list[weapon_type_id][Global.saving_list[10][1]])
 	player.update_animation(weapon_type_id)
+	var animation = player.get_node("AnimationPlayer")
+	animation.play()
 	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):

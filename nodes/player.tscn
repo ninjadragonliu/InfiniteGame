@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://t4cr3dwvl4u1" path="res://Scripts/player.gd" id="1_u63mc"]
 [ext_resource type="Texture2D" uid="uid://dtl15qgrjjo3s" path="res://Assets/Animation/MainCharacter/default/Fist.png" id="2_hqdnm"]
-[ext_resource type="Texture2D" uid="uid://ds34msy0ph876" path="res://Assets/Animation/MainCharacter/default/Idle.png" id="2_me0cc"]
+[ext_resource type="Texture2D" uid="uid://ds34msy0ph876" path="res://Assets/Animation/MainCharacter/default/idle.png" id="2_me0cc"]
 [ext_resource type="Texture2D" uid="uid://bm17n4mwr8035" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Bare_Fist.png" id="3_2wrp4"]
 [ext_resource type="Texture2D" uid="uid://bdo2sq66c8h6h" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Wooden_Lance.png" id="3_46y3y"]
 [ext_resource type="Texture2D" uid="uid://b2i4r7o3brml" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Bare_Fist.png" id="4_46y3y"]
@@ -410,6 +410,7 @@ script = ExtResource("1_u63mc")
 texture_filter = 3
 scale = Vector2(5, 5)
 texture = ExtResource("2_hqdnm")
+flip_h = true
 hframes = 10
 vframes = 4
 region_rect = Rect2(0, 0, 600, 210)
@@ -418,6 +419,7 @@ region_rect = Rect2(0, 0, 600, 210)
 texture_filter = 3
 scale = Vector2(5, 5)
 texture = ExtResource("2_hqdnm")
+flip_h = true
 hframes = 10
 vframes = 4
 frame = 10
@@ -427,6 +429,7 @@ region_rect = Rect2(0, 0, 600, 210)
 texture_filter = 3
 scale = Vector2(5, 5)
 texture = ExtResource("2_hqdnm")
+flip_h = true
 hframes = 10
 vframes = 4
 frame = 20
@@ -436,6 +439,7 @@ region_rect = Rect2(0, 0, 600, 210)
 texture_filter = 3
 scale = Vector2(5, 5)
 texture = ExtResource("2_hqdnm")
+flip_h = true
 hframes = 10
 vframes = 4
 frame = 30
@@ -445,6 +449,7 @@ region_rect = Rect2(0, 0, 600, 210)
 texture_filter = 3
 scale = Vector2(5, 5)
 texture = ExtResource("3_46y3y")
+flip_h = true
 hframes = 10
 vframes = 3
 frame = 19
