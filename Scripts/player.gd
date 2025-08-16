@@ -81,27 +81,45 @@ func update_animation(index: int = 0):#index 0 is ignored, index 1 means it is f
 	var atk_path
 	var atk_weapon_path
 	
-	$Body_idle.hide()
-	$Hair_idle.hide()
-	$Clothe_idle.hide()
-	$Pants_idle.hide()
-	$Weapon_idle.hide()
-	
-	$Body_atk.show()
-	$Hair_atk.show()
-	$Clothe_atk.show()
-	$Pants_atk.show()
-	$Weapon_atk.show()
-	$Effect_atk.show()
+	if index == 0:
+		$Body_idle.show()
+		$Hair_idle.show()
+		$Clothe_idle.show()
+		$Pants_idle.show()
+		$Weapon_idle.show()
+		
+		$Body_atk.hide()
+		$Hair_atk.hide()
+		$Clothe_atk.hide()
+		$Pants_atk.hide()
+		$Weapon_atk.hide()
+		$Effect_atk.hide()
+	else:
+		$Body_idle.hide()
+		$Hair_idle.hide()
+		$Clothe_idle.hide()
+		$Pants_idle.hide()
+		$Weapon_idle.hide()
+		
+		$Body_atk.show()
+		$Hair_atk.show()
+		$Clothe_atk.show()
+		$Pants_atk.show()
+		$Weapon_atk.show()
+		$Effect_atk.show()
 	
 	for costume_part_index in range(8,11):
 		print("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index-1][Global.saving_list[10][costume_part_index]][0]+"/Idle.png")
 		idle_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index-1][Global.saving_list[10][costume_part_index]][0]+"/Idle.png")
 		
-		$Body_idle.texture = idle_path
-		$Hair_idle.texture = idle_path
-		$Clothe_idle.texture = idle_path
-		$Pants_idle.texture = idle_path
+		match costume_part_index:
+			8:
+				$Body_idle.texture = idle_path
+				$Hair_idle.texture = idle_path
+			9:
+				$Clothe_idle.texture = idle_path
+			10:
+				$Pants_idle.texture = idle_path
 		
 		if(index != 0):
 			var type = ""
