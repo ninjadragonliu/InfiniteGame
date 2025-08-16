@@ -161,17 +161,20 @@ var Int_Default = 0
 # How to make event reward => give out the item as finish reward of event, then make sure Shop and on SalesShop => false 
 var weapon_list_fist = [
 	["Bare Fist","", true, 1, "", -1, false, false, -1],
-	["Soldier Glove","", false, 0, "coin", 100, true, false, -1]
+	["Soldier Glove","", false, 0, "coin", 100, true, false, -1],
+	["Paladin Glove","", false, 0, "diamond", 5, true, false, -1]
 ]
  
 var weapon_list_sword = [
 	["Wooden Sword","", true, 1, "", -1, false, false, -1],
-	["Soldier Sword","", false, 0, "diamond", 5, true, true, 3]
+	["Soldier Sword","", false, 0, "diamond", 5, true, true, 3],
+	["Paladin Sword","", false, 0, "diamond", 10, true, false, -1]
 ]
 
 var weapon_list_lance = [
 	["Wooden Lance","", true, 1, "", -1, false, false, -1],
-	["Soldier Lance","", false, 0, "diamond", 9, true, true, 5]
+	["Soldier Lance","", false, 0, "diamond", 9, true, true, 5],
+	["Paladin Lance","", false, 0, "diamond", 15, true, false, -1]
 ]
  
 var top_list = [
@@ -200,23 +203,20 @@ var passive_skill_list = [
 ]
 
 var costume_hair_list = [
-	["Empty", "", true, 1, "", -1, false, false, -1],
-	["default", "", false, 0, "diamond", 10, true, false, -1],
-	["paladin", "", false, 0, "diamond", 10, true, false, -1],
+	["Default", "", true, 1, "", -1, false, false, -1],
+	["Paladin", "", false, 0, "diamond", 10, true, false, -1],
 	["1", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 var costume_top_list = [
-	["Empty", "", true, 1, "", -1, false, false, -1],
-	["default", "", false, 0, "diamond", 10, true, false, -1],
-	["paladin", "", false, 0, "diamond", 10, true, false, -1],
+	["Default", "", true, 1, "", -1, false, false, -1],
+	["Paladin", "", false, 0, "diamond", 10, true, false, -1],
 	["3", "", false, 0, "diamond", 20, true, false, -1]
 ]
 
 var costume_bottom_list = [
-	["Empty", "", true, 1, "", -1, false, false, -1],
-	["default", "", false, 0, "diamond", 10, true, false, -1],
-	["paladin", "", false, 0, "diamond", 10, true, false, -1],
+	["Default", "", true, 1, "", -1, false, false, -1],
+	["Paladin", "", false, 0, "diamond", 10, true, false, -1],
 	["5", "", false, 0, "diamond", 20, true, false, -1]
 ]
 

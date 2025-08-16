@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtl15qgrjjo3s"
-path="res://.godot/imported/Fist.png-14d690bda061c21f1c9e477fb0e86477.ctex"
+path="res://.godot/imported/Fist.png-b7f73b5725ef154b6b929d112535c994.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/default/Fist.png"
-dest_files=["res://.godot/imported/Fist.png-14d690bda061c21f1c9e477fb0e86477.ctex"]
+source_file="res://Assets/Animation/MainCharacter/Default/Fist.png"
+dest_files=["res://.godot/imported/Fist.png-b7f73b5725ef154b6b929d112535c994.ctex"]
 
 [params]
 

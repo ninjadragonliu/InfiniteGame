@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddsl4cdrb6ayg"
-path="res://.godot/imported/Fist.png-2e5cc20e5e6d237fdb5f583b37eecb43.ctex"
+path="res://.godot/imported/Fist.png-152e0fe1b82994b21b6cccce94bc3e33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/paladin/Fist.png"
-dest_files=["res://.godot/imported/Fist.png-2e5cc20e5e6d237fdb5f583b37eecb43.ctex"]
+source_file="res://Assets/Animation/MainCharacter/Paladin/Fist.png"
+dest_files=["res://.godot/imported/Fist.png-152e0fe1b82994b21b6cccce94bc3e33.ctex"]
 
 [params]
 

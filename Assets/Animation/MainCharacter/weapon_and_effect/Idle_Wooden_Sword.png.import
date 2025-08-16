@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyb3xbmwifvoj"
-path="res://.godot/imported/Idle_Wooden_Sword.png-7c2ca5290daf9acb109420fb298bf156.ctex"
+path="res://.godot/imported/Idle_Wooden_Sword.png-d66ce790d80f2de95e88b8f43f68878a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Wooden_Sword.png"
-dest_files=["res://.godot/imported/Idle_Wooden_Sword.png-7c2ca5290daf9acb109420fb298bf156.ctex"]
+source_file="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Idle_Wooden_Sword.png"
+dest_files=["res://.godot/imported/Idle_Wooden_Sword.png-d66ce790d80f2de95e88b8f43f68878a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm17n4mwr8035"
-path="res://.godot/imported/Idle_Bare_Fist.png-3c21ab41878f511cf45d2456fd040e38.ctex"
+path="res://.godot/imported/Idle_Bare_Fist.png-295a5e78b6f89f667865604b2fffedbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Bare_Fist.png"
-dest_files=["res://.godot/imported/Idle_Bare_Fist.png-3c21ab41878f511cf45d2456fd040e38.ctex"]
+source_file="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Idle_Bare_Fist.png"
+dest_files=["res://.godot/imported/Idle_Bare_Fist.png-295a5e78b6f89f667865604b2fffedbe.ctex"]
 
 [params]
 

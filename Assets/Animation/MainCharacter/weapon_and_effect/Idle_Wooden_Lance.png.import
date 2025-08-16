@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dulcn8pcthbs6"
-path="res://.godot/imported/Idle_Wooden_Lance.png-dca599f478c1685c27ab1fc97d994e7d.ctex"
+path="res://.godot/imported/Idle_Wooden_Lance.png-a65eeff21061abc737c8fd814691cbb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Wooden_Lance.png"
-dest_files=["res://.godot/imported/Idle_Wooden_Lance.png-dca599f478c1685c27ab1fc97d994e7d.ctex"]
+source_file="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Idle_Wooden_Lance.png"
+dest_files=["res://.godot/imported/Idle_Wooden_Lance.png-a65eeff21061abc737c8fd814691cbb2.ctex"]
 
 [params]
 
