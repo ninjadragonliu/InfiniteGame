@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://bgbd8dgd1ug5c"]
 
 [ext_resource type="Script" uid="uid://t4cr3dwvl4u1" path="res://Scripts/player.gd" id="1_u63mc"]
-[ext_resource type="Texture2D" uid="uid://dtl15qgrjjo3s" path="res://Assets/Animation/MainCharacter/Default/Fist.png" id="2_hqdnm"]
-[ext_resource type="Texture2D" uid="uid://ds34msy0ph876" path="res://Assets/Animation/MainCharacter/Default/Idle.png" id="2_me0cc"]
-[ext_resource type="Texture2D" uid="uid://bm17n4mwr8035" path="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Idle_Bare_Fist.png" id="3_2wrp4"]
-[ext_resource type="Texture2D" uid="uid://bdo2sq66c8h6h" path="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Wooden_Lance.png" id="3_46y3y"]
+[ext_resource type="Texture2D" uid="uid://dtl15qgrjjo3s" path="res://Assets/Animation/MainCharacter/default/Fist.png" id="2_hqdnm"]
+[ext_resource type="Texture2D" uid="uid://ds34msy0ph876" path="res://Assets/Animation/MainCharacter/default/idle.png" id="2_me0cc"]
+[ext_resource type="Texture2D" uid="uid://bm17n4mwr8035" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Bare_Fist.png" id="3_2wrp4"]
+[ext_resource type="Texture2D" uid="uid://bdo2sq66c8h6h" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Wooden_Lance.png" id="3_46y3y"]
 [ext_resource type="Texture2D" uid="uid://b2i4r7o3brml" path="res://Assets/Animation/MainCharacter/weapon_and_effect/Bare_Fist.png" id="4_46y3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]

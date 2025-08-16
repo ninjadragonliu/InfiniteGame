@@ -157,14 +157,14 @@ func update_animation(index: int = 3):#index 3 is ignored, index 0 means it is f
 		$Effect_atk.texture = atk_weapon_path
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
-	left_button.disabled = true
-	right_button.disabled = true
-	#print("buttons disabled")
+	if left_button and right_button:
+		left_button.disabled = true
+		right_button.disabled = true
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	left_button.disabled = false
-	right_button.disabled = false
-	#print("buttons enabled")
+	if left_button and right_button:
+		left_button.disabled = false
+		right_button.disabled = false
 
 
 #region animation data

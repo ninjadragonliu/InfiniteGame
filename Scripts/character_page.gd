@@ -293,7 +293,7 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	#print(Global.saving_list[weapon_type_id][Global.saving_list[10][1]])
 	player.update_animation(weapon_type_id)
 	var animation = player.get_node("AnimationPlayer")
-	animation.play()
+	animation.play("Attack_Left_Punch_default")
 	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):
