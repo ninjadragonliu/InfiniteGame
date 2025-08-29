@@ -80,11 +80,11 @@ func _on_left_pressed() -> void:
 		for enemy in enemy_in_range_left:
 			player.attack(enemy)
 			enemy_in_range_left.erase(enemy)
-			player._animation_resource_visibility(2)
+			player._animation_resource_visibility()
 			animation.play("Attack_Left")
 
 	else:
-		player._animation_resource_visibility(2)
+		player._animation_resource_visibility()
 		animation.play("Attack_Left")
 #	if animation.animation_finished:
 #		player._animation_resource_visibility(1)
@@ -100,12 +100,12 @@ func _on_right_pressed() -> void:
 			player.attack(enemy)
 			enemy_in_range_right.erase(enemy)
 			#attack_right.emit()
-			player._animation_resource_visibility(2)
+			player._animation_resource_visibility()
 			animation.play("Attack_Right")
 
 	else:
 		#attack_right.emit()
-		player._animation_resource_visibility(2)
+		player._animation_resource_visibility()
 		animation.play("Attack_Right")
 #	if animation.animation_finished:
 #		player._animation_resource_visibility(1)

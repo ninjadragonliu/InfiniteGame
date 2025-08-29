@@ -150,8 +150,8 @@ func set_idle_direction(left: bool = true):
 		$Pants_idle.flip_h = left
 		$Weapon_idle.flip_h = left
 
-func _animation_resource_visibility(index): #index 1 and 3 will show idle, otherwise show atk animation
-	if index == 1 or index == 3:
+func _animation_resource_visibility(index: int = -1): #index 3 will show idle, otherwise show atk animation
+	if index == 3:
 		$Body_idle.show()
 		$Hair_idle.show()
 		$Clothe_idle.show()
