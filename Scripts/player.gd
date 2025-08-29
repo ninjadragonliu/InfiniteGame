@@ -9,6 +9,7 @@ static var damage_normal = 1
 static var damage : int = damage_normal
 static var damage_resistance_normal = 0
 static var damage_resistance : int = 0
+var not_attacking = true
 
 
 func _ready():
@@ -17,7 +18,13 @@ func _ready():
 		left_button = get_tree().current_scene.get_node("Left")
 	if get_tree().current_scene.has_node("Right"):
 		right_button = get_tree().current_scene.get_node("Right")
+	
 
+func _process(delta: float) -> void:
+	if not_attacking:
+		_animation_resource_visibility(1)
+		$AnimationPlayer.play("Idle_Left")
+	
 func attack(body : Node2D):
 	body.take_damage(damage)
 
@@ -161,15 +168,18 @@ func _animation_resource_visibility(index): #index 1 and 3 will show idle, other
 		$Effect_atk.show()
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
-	if left_button and right_button:
-		left_button.disabled = true
-		right_button.disabled = true
+	if anim_name == "Attack_Left" or anim_name == "Attack_Right":
+		not_attacking = false
+		if left_button and right_button:
+			left_button.disabled = true
+			right_button.disabled = true
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if left_button and right_button:
 		left_button.disabled = false
 		right_button.disabled = false
-
+	not_attacking = true
+	
 
 #region animation data
 func play_animation_playerAtk():

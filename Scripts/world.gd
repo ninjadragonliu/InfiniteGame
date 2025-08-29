@@ -78,27 +78,11 @@ func clear_tutorial_level():
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		for enemy in enemy_in_range_left:
-			#if enemy.is_in_group("boss"):
-				#var boss = get_tree().get_first_node_in_group("boss")
-				#if boss.health == 1:
-					#player.attack(enemy)
-					#enemy_in_range_left.erase(enemy)
-					#enemies_remaining -= 1
-					#animation.play("Attack_Left_Punch_default")
-					#continue
-				#player.attack(enemy)
-				#enemy_in_range_left.erase(enemy)
-				#animation.play("Attack_Left_Punch_default")
-				#continue
 			player.attack(enemy)
 			enemy_in_range_left.erase(enemy)
-			#enemies_remaining -= 1
 			player._animation_resource_visibility(2)
 			animation.play("Attack_Left")
-			#if not Global.tutorial_cleared:
-				#clear_tutorial_level()
-			#elif enemies_remaining == 0:
-				#clear_level()
+
 	else:
 		player._animation_resource_visibility(2)
 		animation.play("Attack_Left")
@@ -110,28 +94,14 @@ func _on_left_pressed() -> void:
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		for enemy in enemy_in_range_right:
-			#if enemy.is_in_group("boss"):
-				#var boss = get_tree().get_first_node_in_group("boss")
-				#if boss.health == 1:
-					#player.attack(enemy)
-					#enemy_in_range_right.erase(enemy)
-					#enemies_remaining -= 1
-					#animation.play("Attack_Right_Punch_default")
-					#continue
-				#player.attack(enemy)
-				#enemy_in_range_right.erase(enemy)
-				#animation.play("Attack_Right_Punch_default")
-				#continue
 			player.attack(enemy)
 			enemy_in_range_right.erase(enemy)
-			#enemies_remaining -= 1
+			#attack_right.emit()
 			player._animation_resource_visibility(2)
 			animation.play("Attack_Right")
-			#if not Global.tutorial_cleared:
-				#clear_tutorial_level()
-			#elif enemies_remaining == 0:
-				#clear_level()
+
 	else:
+		#attack_right.emit()
 		player._animation_resource_visibility(2)
 		animation.play("Attack_Right")
 #	if animation.animation_finished:
