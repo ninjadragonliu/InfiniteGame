@@ -19,6 +19,8 @@ var diamonds = int(0)
 var max_score = 0
 var last_login_date = ""
 
+var playerAnimationDirection = false # false facing left and true facing right
+
 var new_attribute = true
 var gm_mode = true
 var money_mode = true

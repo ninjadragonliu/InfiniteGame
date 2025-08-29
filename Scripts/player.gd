@@ -23,7 +23,10 @@ func _ready():
 func _process(delta: float) -> void:
 	if not_attacking:
 		_animation_resource_visibility(1)
-		$AnimationPlayer.play("Idle_Left")
+		if Global.playerAnimationDirection == false:
+			$AnimationPlayer.play("Idle_Left")
+		else:
+			$AnimationPlayer.play("Idle_Right")
 	
 func attack(body : Node2D):
 	body.take_damage(damage)

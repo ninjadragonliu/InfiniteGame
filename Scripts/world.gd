@@ -90,6 +90,8 @@ func _on_left_pressed() -> void:
 #		player._animation_resource_visibility(1)
 #		animation.play("Idle_Left")
 
+	Global.playerAnimationDirection = false
+
 
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
@@ -108,6 +110,8 @@ func _on_right_pressed() -> void:
 #		player._animation_resource_visibility(1)
 #		animation.play("Idle_Right")
 
+	Global.playerAnimationDirection = true
+
 func _on_line_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):
 		enemy_in_range_left.append(body)
@@ -125,17 +129,17 @@ func _on_skill_timer_timerout():
 	player.damage_resistance = player.damage_resistance_normal
 	
 func _on_fist_pressed() -> void:
-	player.change_weapon()
+	player.update_animation(0)
 	print("Weapon 1 selected")
 	
 
 func _on_sword_pressed() -> void:
-	player.change_weapon()
+	player.update_animation(1)
 	print("Weapon 2 selected")
 
 
 func _on_lance_pressed() -> void:
-	player.change_weapon()
+	player.update_animation(2)
 	print("Weapon 3 selected")
 
 func add_point():
