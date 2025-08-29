@@ -23,7 +23,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if not_attacking:
-		_animation_resource_visibility(1)
+		_animation_resource_visibility(3)
 		if player_direction:
 			$AnimationPlayer.play("Idle_Left")
 		else:
