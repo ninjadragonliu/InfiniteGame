@@ -93,13 +93,18 @@ func _on_left_pressed() -> void:
 			player.attack(enemy)
 			enemy_in_range_left.erase(enemy)
 			#enemies_remaining -= 1
-			animation.play("Attack_Left_Punch_default")
+			player._animation_resource_visibility(2)
+			animation.play("Attack_Left")
 			#if not Global.tutorial_cleared:
 				#clear_tutorial_level()
 			#elif enemies_remaining == 0:
 				#clear_level()
 	else:
-		animation.play("Attack_Left_Punch_default")
+		player._animation_resource_visibility(2)
+		animation.play("Attack_Left")
+#	if animation.animation_finished:
+#		player._animation_resource_visibility(1)
+#		animation.play("Idle_Left")
 
 
 func _on_right_pressed() -> void:
@@ -120,13 +125,18 @@ func _on_right_pressed() -> void:
 			player.attack(enemy)
 			enemy_in_range_right.erase(enemy)
 			#enemies_remaining -= 1
-			animation.play("Attack_Right_Punch_default")
+			player._animation_resource_visibility(2)
+			animation.play("Attack_Right")
 			#if not Global.tutorial_cleared:
 				#clear_tutorial_level()
 			#elif enemies_remaining == 0:
 				#clear_level()
 	else:
-		animation.play("Attack_Right_Punch_default")
+		player._animation_resource_visibility(2)
+		animation.play("Attack_Right")
+#	if animation.animation_finished:
+#		player._animation_resource_visibility(1)
+#		animation.play("Idle_Right")
 
 func _on_line_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):
@@ -135,7 +145,6 @@ func _on_line_left_body_entered(body: Node2D) -> void:
 func _on_line_right_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):
 		enemy_in_range_right.append(body)
-
 
 func _on_skills_pressed() -> void:
 	print("Skill actived")

@@ -4,7 +4,7 @@ extends Control
 @onready var player_hair = player.get_node("Hair_atk")
 @onready var player_shirt = player.get_node("Clothe_atk")
 @onready var player_pants = player.get_node("Pants_atk")
-
+@onready var animation = player.get_node("AnimationPlayer")
 var passive_slot = 0
 
 func _ready() -> void:
@@ -216,6 +216,7 @@ func _ready_costume_hair_page():
 				button.texture_disabled = load("res://Assets/testing_disabled.png")
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			costume_hair_grid.add_child(button)
+	animation.play("Idle_Left")
 
 func _ready_costume_top_page():
 	Global.save_game_data()
@@ -292,8 +293,8 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	#print("----Equipped----")
 	#print(Global.saving_list[weapon_type_id][Global.saving_list[10][1]])
 	player.update_animation(weapon_type_id)
-	var animation = player.get_node("AnimationPlayer")
-	animation.play("Attack_Left_Punch_default")
+	animation.stop()
+	animation.play("Attack_Left")
 	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):
