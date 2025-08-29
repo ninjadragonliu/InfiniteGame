@@ -90,7 +90,7 @@ func _on_left_pressed() -> void:
 #		player._animation_resource_visibility(1)
 #		animation.play("Idle_Left")
 
-	Global.playerAnimationDirection = false
+	#Global.playerAnimationDirection = false
 
 
 func _on_right_pressed() -> void:
@@ -110,7 +110,7 @@ func _on_right_pressed() -> void:
 #		player._animation_resource_visibility(1)
 #		animation.play("Idle_Right")
 
-	Global.playerAnimationDirection = true
+	#Global.playerAnimationDirection = true
 
 func _on_line_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):

@@ -10,6 +10,7 @@ static var damage : int = damage_normal
 static var damage_resistance_normal = 0
 static var damage_resistance : int = 0
 var not_attacking = true
+var player_direction = true
 
 
 func _ready():
@@ -23,7 +24,7 @@ func _ready():
 func _process(delta: float) -> void:
 	if not_attacking:
 		_animation_resource_visibility(1)
-		if Global.playerAnimationDirection == false:
+		if player_direction:
 			$AnimationPlayer.play("Idle_Left")
 		else:
 			$AnimationPlayer.play("Idle_Right")
@@ -172,6 +173,10 @@ func _animation_resource_visibility(index): #index 1 and 3 will show idle, other
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "Attack_Left" or anim_name == "Attack_Right":
+		if anim_name == "Attack_Right":
+			player_direction = false
+		else:
+			player_direction = true
 		not_attacking = false
 		if left_button and right_button:
 			left_button.disabled = true
