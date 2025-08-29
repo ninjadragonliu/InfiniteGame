@@ -10,7 +10,7 @@ static var damage : int = damage_normal
 static var damage_resistance_normal = 0
 static var damage_resistance : int = 0
 var not_attacking = true
-var player_direction = true
+var player_direction = true # true is same as flipH = true, character looking left
 
 
 func _ready():
@@ -142,6 +142,13 @@ func update_animation(index: int = 3, changeEquip: bool = true):#index 3 is igno
 			atk_weapon_path = load("res://Assets/Animation/MainCharacter/Weapon_and_Effect/"+Global.saving_list[index][Global.saving_list[10][index]][0].replace(" ", "_")+".png")
 			$Weapon_atk.texture = atk_weapon_path
 			$Effect_atk.texture = atk_weapon_path
+
+func set_idle_direction(left: bool = true):
+		$Body_idle.flip_h = left
+		$Hair_idle.flip_h = left
+		$Clothe_idle.flip_h = left
+		$Pants_idle.flip_h = left
+		$Weapon_idle.flip_h = left
 
 func _animation_resource_visibility(index): #index 1 and 3 will show idle, otherwise show atk animation
 	if index == 1 or index == 3:
