@@ -25,9 +25,10 @@ func _process(delta: float) -> void:
 	if not_attacking:
 		_animation_resource_visibility(3)
 		if player_direction:
-			$AnimationPlayer.play("Idle_Left")
+			$AnimationPlayer.play("Idle_Left", 0.1)
 		else:
-			$AnimationPlayer.play("Idle_Right")
+			$AnimationPlayer.play("Idle_Right", 0.1)
+		
 	
 func attack(body : Node2D):
 	body.take_damage(damage)
@@ -152,18 +153,18 @@ func set_idle_direction(left: bool = true):
 
 func _animation_resource_visibility(index: int = -1): #index 3 will show idle, otherwise show atk animation
 	if index == 3:
-		$Body_idle.show()
-		$Hair_idle.show()
-		$Clothe_idle.show()
-		$Pants_idle.show()
-		$Weapon_idle.show()
-		
 		$Body_atk.hide()
 		$Hair_atk.hide()
 		$Clothe_atk.hide()
 		$Pants_atk.hide()
 		$Weapon_atk.hide()
 		$Effect_atk.hide()
+		
+		$Body_idle.show()
+		$Hair_idle.show()
+		$Clothe_idle.show()
+		$Pants_idle.show()
+		$Weapon_idle.show()
 	else:
 		$Body_idle.hide()
 		$Hair_idle.hide()

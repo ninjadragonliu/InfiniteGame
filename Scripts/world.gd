@@ -76,6 +76,7 @@ func clear_tutorial_level():
 		#popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_left_pressed() -> void:
+	animation.seek(0, true)
 	if enemy_in_range_left:
 		for enemy in enemy_in_range_left:
 			player.attack(enemy)
@@ -95,6 +96,7 @@ func _on_left_pressed() -> void:
 
 
 func _on_right_pressed() -> void:
+	animation.seek(0, true)
 	if enemy_in_range_right:
 		for enemy in enemy_in_range_right:
 			player.attack(enemy)

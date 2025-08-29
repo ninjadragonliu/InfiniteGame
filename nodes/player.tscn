@@ -310,7 +310,7 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id="Animation_46y3y"]
 resource_name = "Idle_Left"
-length = 0.28
+length = 0.25
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -435,7 +435,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_ejohg"]
 resource_name = "Idle_Right"
-length = 0.28
+length = 0.25
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
