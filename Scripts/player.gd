@@ -89,7 +89,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		take_damaged.emit()
 
-func update_animation(index: int = 3, changeEquip: bool = true):#index 3 is ignored, index 0 means it is fist animation, 1 is sword, 2 is lance
+func update_animation(index: int = 3):#index 3 is ignored, index 0 means it is fist animation, 1 is sword, 2 is lance
 	var idle_path
 	var idle_weapon_path
 	var atk_path
@@ -97,43 +97,41 @@ func update_animation(index: int = 3, changeEquip: bool = true):#index 3 is igno
 	
 	_animation_resource_visibility(index)
 	
-	if changeEquip:
-		for costume_part_index in range(7,10):
-			print("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+"/Idle.png")
-			idle_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+"/Idle.png")
+	for costume_part_index in range(7,10):
+		print("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+"/Idle.png")
+		idle_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+"/Idle.png")
+		
+		match costume_part_index:
+			7:
+				$Body_idle.texture = idle_path
+				$Hair_idle.texture = idle_path
+			8:
+				$Clothe_idle.texture = idle_path
+			9:
+				$Pants_idle.texture = idle_path
+		
+		if(index != 3):
+			var type = ""
+			match(index):
+				0:
+					type = "/Fist.png"
+				1:
+					type = "/Sword.png"
+				2:
+					type = "/Lance.png"
+			print("------------")
+			print("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+type)
+			atk_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+type)
 			
 			match costume_part_index:
 				7:
-					$Body_idle.texture = idle_path
-					$Hair_idle.texture = idle_path
+					$Body_atk.texture = atk_path
+					$Hair_atk.texture = atk_path
 				8:
-					$Clothe_idle.texture = idle_path
+					$Clothe_atk.texture = atk_path
 				9:
-					$Pants_idle.texture = idle_path
+					$Pants_atk.texture = atk_path
 			
-			if(index != 3):
-				var type = ""
-				match(index):
-					0:
-						type = "/Fist.png"
-					1:
-						type = "/Sword.png"
-					2:
-						type = "/Lance.png"
-				print("------------")
-				print("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+type)
-				atk_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[costume_part_index][Global.saving_list[10][costume_part_index+1]][0]+type)
-				
-				match costume_part_index:
-					7:
-						$Body_atk.texture = atk_path
-						$Hair_atk.texture = atk_path
-					8:
-						$Clothe_atk.texture = atk_path
-					9:
-						$Pants_atk.texture = atk_path
-		
-		if(index != 3):
 			print("------------")
 			print("res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_"+Global.saving_list[index][Global.saving_list[10][index]][0].replace(" ", "_")+".png")
 			idle_weapon_path = load("res://Assets/Animation/MainCharacter/Weapon_and_Effect/Idle_"+Global.saving_list[index][Global.saving_list[10][index]][0].replace(" ", "_")+".png")
