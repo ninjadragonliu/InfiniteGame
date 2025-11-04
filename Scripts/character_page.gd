@@ -4,8 +4,30 @@ extends Control
 @onready var player_hair = player.get_node("Hair_atk")
 @onready var player_shirt = player.get_node("Clothe_atk")
 @onready var player_pants = player.get_node("Pants_atk")
+@onready var player_temp1 = player.get_node("temp1")
+@onready var player_temp2 = player.get_node("temp2")
+@onready var player_temp1_idle = player.get_node("temp1_idle")
 @onready var animation = player.get_node("AnimationPlayer")
 var passive_slot = 0
+
+var shift_value = 10
+var shift_vframe = 2
+var clothe_sprite_names = [
+	"Clothe_atk",
+	"Clothe_idle"
+	#"temp1","temp2" isn't going to change location so not going to be put in this array
+]
+var pants_sprite_names = [
+	"Pants_atk",
+	"Pants_idle"
+]
+
+var animation_names = [
+	"Attack_Left",
+	"Attack_Right",
+	"Idle_Left",
+	"Idle_Right"
+]
 
 func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
@@ -384,6 +406,9 @@ func _on_costume_hair_icon_pressed(hair_name):
 func _on_costume_top_icon_pressed(top_name):
 	var index = 0
 	
+	# If the frame was fixed for using temp1 and temp2 layer
+	var fix_frame = Global.saving_list[8][Global.saving_list[10][9]][9]
+	
 	#unequip
 	Global.saving_list[8][Global.saving_list[10][9]][3] = 0
 	
@@ -391,9 +416,45 @@ func _on_costume_top_icon_pressed(top_name):
 		if top[0] == top_name:
 			top[3] = 1
 			Global.saving_list[10][9] = index
-			break
+			var case = 0
 			
+			if top[9] == 1 and fix_frame != 1:
+				case = 1 # From not using temp1 and temp2 sprite layer to using
+			elif top[9] == 0 and fix_frame == 1:
+				case = -1 # From using temp1 and temp2 sprite layer to not using
+				
+			if case != 0:
+				for anim_name in animation_names:
+					var anim = animation.get_animation(anim_name)
+					
+					for sprite_name in clothe_sprite_names:
+						var sprite = player.get_node(sprite_name)
+						var node_path = NodePath("../" + sprite_name)
+						
+						# Check if track exist
+						var track = anim.find_track(node_path, Animation.TYPE_VALUE)
+						
+						if track != -1:
+							var key_count = anim.track_get_key_count(track)
+							
+							for i in range(key_count):
+								var old_value = anim.track_get_key_value(track, i)
+								anim.track_set_key_value(track, i, old_value+(shift_value*case))
+								sprite.vframes += shift_vframe * case
+							
+							if case != 1:
+								case = 0
+							player_temp1.visible = case
+							player_temp2.visible = case
+							player_temp1_idle.visible = case
+							
+						if shift_vframe == 2:
+							shift_vframe -= 1
+							fix_frame -= 3
+			break
 		index += 1# keep track of index
+	shift_vframe = 3
+	fix_frame = 10
 	#print(Global.saving_list[8][Global.saving_list[10][9]][0])
 	#player_shirt.texture = load("res://Assets/1.png") # hard coding setting the texture of the shirt
 	player.update_animation()
@@ -402,6 +463,9 @@ func _on_costume_top_icon_pressed(top_name):
 func _on_costume_bottom_icon_pressed(bottom_name):
 	var index = 0
 	
+	# If the frame was fixed for using temp1 and temp2 layer
+	var fix_frame = Global.saving_list[9][Global.saving_list[10][10]][9]
+	
 	#unequip
 	Global.saving_list[9][Global.saving_list[10][10]][3] = 0
 	
@@ -409,9 +473,46 @@ func _on_costume_bottom_icon_pressed(bottom_name):
 		if bottom[0] == bottom_name:
 			bottom[3] = 1
 			Global.saving_list[10][10] = index
-			break
 			
+			var case = 0
+			
+			if bottom[9] == 1 and fix_frame != 1:
+				case = 1 # From not using temp1 and temp2 sprite layer to using
+			elif bottom[9] == 0 and fix_frame == 1:
+				case = -1 # From using temp1 and temp2 sprite layer to not using
+				
+			if case != 0:
+				for anim_name in animation_names:
+					var anim = animation.get_animation(anim_name)
+					
+					for sprite_name in clothe_sprite_names:
+						var sprite = player.get_node(sprite_name)
+						var node_path = NodePath("../" + sprite_name)
+						
+						# Check if track exist
+						var track = anim.find_track(node_path, Animation.TYPE_VALUE)
+						
+						if track != -1:
+							var key_count = anim.track_get_key_count(track)
+							
+							for i in range(key_count):
+								var old_value = anim.track_get_key_value(track, i)
+								anim.track_set_key_value(track, i, old_value+(shift_value*case))
+								sprite.vframes += shift_vframe * case
+							
+							if case != 1:
+								case = 0
+							player_temp1.visible = case
+							player_temp2.visible = case
+							player_temp1_idle.visible = case
+							
+						if shift_vframe == 2:
+							shift_vframe -= 1
+							fix_frame -= 3
+			break
 		index += 1# keep track of index
+	shift_vframe = 3
+	fix_frame = 10
 	#print(Global.saving_list[9][Global.saving_list[10][10]][0])
 	#player_pants.texture = load("res://Assets/5.png") # hard coding setting the texture of the pants
 	player.update_animation()

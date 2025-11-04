@@ -177,16 +177,17 @@ var weapon_list_lance = [
 	["Paladin Lance","", false, 0, "diamond", 15, true, false, -1]
 ]
  
+# extra element at position [9] for check if there is cloak
 var top_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["Skin Armor", "", false, 0, "coin", 100, true, false, -1],
-	["Leather Armor", "", false, 0, "coin", 500, true, false, -1]
+	["Metal Armor", "", false, 0, "coin", 500, true, false, -1]
 ]
 
 var bottom_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["Skin Pants", "", false, 0, "coin", 100, true, false, -1],
-	["Leather Pants", "", false, 0, "coin", 500, true, false, -1]
+	["Metal Pants", "", false, 0, "coin", 500, true, false, -1]
 ]
 
 var active_skill_list = [
@@ -203,21 +204,21 @@ var passive_skill_list = [
 ]
 
 var costume_hair_list = [
-	["Default", "", true, 1, "", -1, false, false, -1],
-	["Paladin", "", false, 0, "diamond", 10, true, false, -1],
-	["1", "", false, 0, "diamond", 20, true, false, -1]
+	["Default", "", true, 1, "", -1, false, false, -1, 0],
+	["Paladin", "", false, 0, "diamond", 10, true, false, -1, 1],
+	["1", "", false, 0, "diamond", 20, true, false, -1, 0]
 ]
 
 var costume_top_list = [
-	["Default", "", true, 1, "", -1, false, false, -1],
-	["Paladin", "", false, 0, "diamond", 10, true, false, -1],
-	["3", "", false, 0, "diamond", 20, true, false, -1]
+	["Default", "", true, 1, "", -1, false, false, -1, 0],
+	["Paladin", "", false, 0, "diamond", 10, true, false, -1, 1],
+	["3", "", false, 0, "diamond", 20, true, false, -1, 0]
 ]
 
 var costume_bottom_list = [
-	["Default", "", true, 1, "", -1, false, false, -1],
-	["Paladin", "", false, 0, "diamond", 10, true, false, -1],
-	["5", "", false, 0, "diamond", 20, true, false, -1]
+	["Default", "", true, 1, "", -1, false, false, -1, 0],
+	["Paladin", "", false, 0, "diamond", 10, true, false, -1, 1],
+	["5", "", false, 0, "diamond", 20, true, false, -1, 0]
 ]
 
 # player current equip only stores the index of what is equiped [fist, sword, lance, top, bottom, active, passive1, passive2, costume_hair, costume_top, costume_bottom]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgbd8dgd1ug5c"]
+[gd_scene load_steps=15 format=3 uid="uid://bgbd8dgd1ug5c"]
 
 [ext_resource type="Script" uid="uid://t4cr3dwvl4u1" path="res://Scripts/player.gd" id="1_u63mc"]
+[ext_resource type="Texture2D" uid="uid://ds27rhb673awt" path="res://Assets/Animation/MainCharacter/Paladin/Fist.png" id="2_2wrp4"]
 [ext_resource type="Texture2D" uid="uid://dtl15qgrjjo3s" path="res://Assets/Animation/MainCharacter/Default/Fist.png" id="2_hqdnm"]
-[ext_resource type="Texture2D" uid="uid://ds34msy0ph876" path="res://Assets/Animation/MainCharacter/Default/Idle.png" id="2_me0cc"]
 [ext_resource type="Texture2D" uid="uid://bm17n4mwr8035" path="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Idle_Bare_Fist.png" id="3_2wrp4"]
 [ext_resource type="Texture2D" uid="uid://bdo2sq66c8h6h" path="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Wooden_Lance.png" id="3_46y3y"]
 
@@ -302,6 +302,54 @@ tracks/11/path = NodePath("Effect_atk:flip_h")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("temp1:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("temp2:frame")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [60, 61, 62, 63, 64, 65, 66, 67, 68, 69]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("temp2:flip_h")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("temp1:flip_h")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -836,6 +884,54 @@ tracks/22/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("temp1:flip_h")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("temp2:flip_h")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("temp1:frame")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("temp2:frame")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqdnm"]
 _data = {
@@ -846,8 +942,20 @@ _data = {
 &"RESET": SubResource("Animation_bms3g")
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7lbay"]
+load_path = "res://.godot/imported/Idle.png-94525e8e138e5c40fbc0ab08ac9495f0.ctex"
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_u63mc")
+
+[node name="temp1" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 3
+scale = Vector2(5, 5)
+texture = ExtResource("2_2wrp4")
+hframes = 10
+vframes = 6
+region_rect = Rect2(0, 0, 600, 210)
 
 [node name="Body_atk" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -903,6 +1011,15 @@ vframes = 3
 frame = 20
 region_rect = Rect2(0, 0, 600, 210)
 
+[node name="temp2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 3
+scale = Vector2(5, 5)
+texture = ExtResource("2_2wrp4")
+hframes = 10
+vframes = 6
+region_rect = Rect2(0, 0, 600, 210)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_go701")
@@ -920,11 +1037,20 @@ libraries = {
 }
 speed_scale = 0.5
 
+[node name="temp1_idle" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 3
+scale = Vector2(5, 5)
+texture = ExtResource("2_hqdnm")
+hframes = 10
+vframes = 4
+region_rect = Rect2(0, 0, 600, 210)
+
 [node name="Body_idle" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_me0cc")
+texture = SubResource("CompressedTexture2D_7lbay")
 flip_h = true
 hframes = 7
 vframes = 4
@@ -934,7 +1060,7 @@ region_rect = Rect2(0, 0, 600, 210)
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_me0cc")
+texture = SubResource("CompressedTexture2D_7lbay")
 flip_h = true
 hframes = 7
 vframes = 4
@@ -945,7 +1071,7 @@ region_rect = Rect2(0, 0, 600, 210)
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_me0cc")
+texture = SubResource("CompressedTexture2D_7lbay")
 flip_h = true
 hframes = 7
 vframes = 4
@@ -956,7 +1082,7 @@ region_rect = Rect2(0, 0, 600, 210)
 visible = false
 texture_filter = 3
 scale = Vector2(5, 5)
-texture = ExtResource("2_me0cc")
+texture = SubResource("CompressedTexture2D_7lbay")
 flip_h = true
 hframes = 7
 vframes = 4
