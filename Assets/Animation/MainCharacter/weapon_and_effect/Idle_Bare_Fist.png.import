@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm17n4mwr8035"
-path="res://.godot/imported/Idle_Bare_Fist.png-295a5e78b6f89f667865604b2fffedbe.ctex"
+path="res://.godot/imported/Idle_Bare_Fist.png-3c21ab41878f511cf45d2456fd040e38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/Weapon_and_Effect/Idle_Bare_Fist.png"
-dest_files=["res://.godot/imported/Idle_Bare_Fist.png-295a5e78b6f89f667865604b2fffedbe.ctex"]
+source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/Idle_Bare_Fist.png"
+dest_files=["res://.godot/imported/Idle_Bare_Fist.png-3c21ab41878f511cf45d2456fd040e38.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
